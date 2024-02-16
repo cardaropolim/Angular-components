@@ -12,12 +12,28 @@ export class ButtonComponent {
 
 @Input() text: string = '';
 @Input() primary: boolean = true;
-@Input() buttonType: 'primary' | 'secondary' = 'primary'
+@Input() buttonType: 'Primary' | 'Secondary' | 'Tertiary' | 'Quaternary' | 'Quinary' | 'Senary' | 'Septenary' | 'Octonary' | 'Nonary' | 'Denary' = 'Primary'
 
 public get buttonClass(): string [] {
   const mode = this.primary 
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary'
+  ? 'storybook-button--primary'
+  : this.buttonType === 'Secondary'
+  ? 'storybook-button--secondary'
+  : this.buttonType === 'Tertiary'
+  ? 'storybook-button--tertiary'
+  : this.buttonType === 'Quaternary'
+  ? 'storybook-button--quaternary'
+  : this.buttonType === 'Quinary'
+  ? 'storybook-button--quinary'
+  : this.buttonType === 'Senary'
+  ? 'storybook-button--senary'
+  : this.buttonType === 'Septenary'
+  ? 'storybook-button--septenary'
+  : this.buttonType === 'Octonary'
+  ? 'storybook-button--octonary'
+  : this.buttonType === 'Nonary'
+  ? 'storybook-button--nonary'
+  : 'storybook-button--denary';
     return ['storybook-button', `storybook-button--${this.buttonType}`, mode];
 }
 }
