@@ -12,18 +12,19 @@ export class ButtonComponent {
 
 @Input() text: string = '';
 @Input() primary: boolean = true;
-@Input() buttonType: 'Primary' | 'Secondary' | 'Tertiary' | 'Quaternary' | 'Quinary' | 'Senary' | 'Septenary' | 'Octonary' | 'Nonary' | 'Denary' = 'Primary'
+@Input() buttonType: 'Primary' | 'Secondary' | 'Tertiary' | 'Quaternary' | 'Quinary' | 'Senary' | 'Septenary' | 'Octonary' | 'Nonary' | 'Denary' = 'Primary';
+// @Input() backgroundColor: 
 
 public get buttonClass(): string [] {
   const mode = this.primary 
   ? 'storybook-button--primary'
-  : this.buttonType === 'Secondary'
+  : this.buttonType == 'Secondary'
   ? 'storybook-button--secondary'
-  : this.buttonType === 'Tertiary'
+  : this.buttonType == 'Tertiary'
   ? 'storybook-button--tertiary'
-  : this.buttonType === 'Quaternary'
+  : this.buttonType == 'Quaternary'
   ? 'storybook-button--quaternary'
-  : this.buttonType === 'Quinary'
+  : this.buttonType == 'Quinary'
   ? 'storybook-button--quinary'
   : this.buttonType === 'Senary'
   ? 'storybook-button--senary'

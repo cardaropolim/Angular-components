@@ -1,52 +1,95 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import { componentWrapperDecorator, type Meta, type StoryObj } from "@storybook/angular";
+import { ButtonComponent } from "../app/button/button.component";
 
-import { ButtonComponent } from './button.component';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
-const meta: Meta<ButtonComponent> = {
-  title: 'Example/Button',
-  component: ButtonComponent,
-  tags: ['autodocs'],
-  render: (args: ButtonComponent) => ({
-    props: {
-      backgroundColor: null,
-      ...args,
+const Meta: Meta<ButtonComponent> = {
+    component: ButtonComponent,
+  };
+
+export default {
+    title: 'Components/button',
+    component:ButtonComponent,
+    decorators: [
+        componentWrapperDecorator(ButtonComponent, ({ args }) => {
+            return args;
+        }),
+    ],
+    parameters : {
+        layout: 'centered',
+        controls: {
+            expanded: true ,
+            matchers: {
+                color: /(background|color)$/i,
+                date: /Date$/,
+            },
+        },
     },
-  }),
-  argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
-  },
+
+    tags: ['autodocs'],
+    render: (args:ButtonComponent) => ({
+        props: {
+            ...args,
+        },
+    }),
+} as Meta<ButtonComponent>;
+
+type ButtonComponentStory = StoryObj<ButtonComponent>;
+export const Primary: ButtonComponentStory = {
+    args: {
+        text: 'Primary',
+    }
 };
 
-export default meta;
-type Story = StoryObj<ButtonComponent>;
-
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
+export const Secondary: ButtonComponentStory = {
+    args: {
+        text: 'Secondary',
+    }
 };
 
-export const Secondary: Story = {
-  args: {
-    label: 'Button',
-  },
+export const Tertiary: ButtonComponentStory = {
+    args: {
+        text: 'Tertiary',
+    }
 };
 
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
+export const Quaternary: ButtonComponentStory = {
+    args: {
+        text: 'Quaternary',
+    }
 };
 
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
+export const Quinary: ButtonComponentStory = {
+    args: {
+        text: 'Quinary',
+    }
+};
+
+export const Senary: ButtonComponentStory = {
+    args: {
+        text: 'Senary',
+    }
+};
+
+export const Septenary: ButtonComponentStory = {
+    args: {
+        text: 'Septenary',
+    }
+};
+
+export const Octonary: ButtonComponentStory = {
+    args: {
+        text: 'Octonary',
+    }
+};
+
+export const Nonary: ButtonComponentStory = {
+    args: {
+        text: 'Nonary',
+    }
+};
+
+export const Denary: ButtonComponentStory = {
+    args: {
+        text: 'Denary',
+    }
 };
