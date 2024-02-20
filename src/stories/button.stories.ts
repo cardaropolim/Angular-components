@@ -23,14 +23,15 @@ export default {
                 date: /Date$/,
             },
         },
+        
+        tags: ['autodocs'],
+        render: (args:ButtonComponent) => ({
+            props: {
+                ...args,
+            },
+        }),
     },
 
-    tags: ['autodocs'],
-    render: (args:ButtonComponent) => ({
-        props: {
-            ...args,
-        },
-    }),
 } as Meta<ButtonComponent>;
 
 type ButtonComponentStory = StoryObj<ButtonComponent>;
