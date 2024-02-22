@@ -1,6 +1,10 @@
 import type { Preview } from "@storybook/angular";
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import docJson from "../documentation.json";
+// import  'https://fonts.googleapis.com/icon?family=Material+Icons';
+// import "@fontsource/material-icons";
+
+
 setCompodocJson(docJson);
 
 const preview: Preview = {

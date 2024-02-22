@@ -1,6 +1,11 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.color-primary {
+    color: red
+}
 
-/* icon.component.scss */
-.container {
-    text-align: center;
-  }
+.color-warn {
+    color: blue
+}
+
+.color-accent {
+    color: red
+}

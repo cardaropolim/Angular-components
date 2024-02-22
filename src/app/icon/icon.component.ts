@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-icon',
-  template: '<div>{{ someVariable }}</div>',
   standalone: true,
   imports: [CommonModule, MatIconModule],
   templateUrl: './icon.component.html',
@@ -12,10 +11,11 @@ import { CommonModule } from '@angular/common';
 })
 
 
+
+
 export class IconComponent {
-  // @Input() label: string | any;
   @Input() primary: boolean = true;
-  @Input() name: string | undefined;
+  @Input() color: 'primary'| 'accent'| 'warn' = 'primary';
   @Input() icon:
       | 'Home'
       | 'Accessibility'
@@ -27,6 +27,8 @@ export class IconComponent {
       | 'Question'
       | 'Receipt'
       | 'Room' = 'Home';
+
+
 
   public iconMappings: { [key: string]: string } = {
     Home: 'home',
@@ -42,15 +44,13 @@ export class IconComponent {
   };
 
   public get iconClass(): string[] {
-    // Détermine le mode en fonction de la propriété 'primary'
+    // Détermine le mode en fonction de la propriété 'primary'op^
     const mode = this.primary
         ? 'storybook-icon--primary'
         : 'storybook-icon--secondary';
   
-    // Récupère le nom de l'icône correspondant à la propriété 'icon'
-    const iconName = this.iconMappings[this.icon] || 'warning';
   
     // Retourne un tableau de classes CSS
-    return ['storybook-icon', `storybook-icon--${mode}`, `material-icons`].concat(iconName);
+    return ['storybook-icon', `storybook-icon--${mode}`, `material-icons`];
   }
 }

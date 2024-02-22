@@ -305,7 +305,7 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<Button type=\"button\" [ngClass]=\"buttonClass\">{{ text }}</Button>\n\n"
+            "templateData": "<button type=\"button\" [ngClass]=\"buttonClass\">{{ text }}</button>\n\n"
         },
         {
             "name": "HeaderComponent",
@@ -395,7 +395,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-859ba5751a384cb2774c26cd50efc5b6b550d46420e42deb6951e306e4397b6b7dc8ce4224aba4f8555c92c0fb9dcd0ca9f53015dd92eb0adb852587093c28d2",
+            "id": "component-IconComponent-b82f65d5f4d46310fdbed75ee8165d8eb8bd1545cf4a7b10c0094dc66cea5852ddb98812e5d893d227636bcf6a0b25aff069c4fa26bd73f658edd08eadf5966f",
             "file": "src/app/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -407,7 +407,6 @@
                 "./icon.component.scss"
             ],
             "styles": [],
-            "template": "<div>{{ someVariable }}</div>",
             "templateUrl": [
                 "./icon.component.html"
             ],
@@ -419,16 +418,8 @@
                     "defaultValue": "'Home'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
-                    "type": "\"Home\" | \"Accessibility\" | \"AccountCircle\" | \"Autorenew\" | \"Explore\" | \"Favorite\" | \"Payment\" | \"Question\" | \"Receipt\" | \"Room\"",
-                    "decorators": []
-                },
-                {
-                    "name": "name",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 16,
-                    "type": "string | undefined",
+                    "type": "\"Home\" | \"Accessibility\" | \"AccountCircle\" | \"Autorenew\" | \"Explore\" | \"Favorite\" | \"Payment\" | \"Question\" | \"Receipt\" | \"Room\"",
                     "decorators": []
                 },
                 {
@@ -451,7 +442,7 @@
                     "type": "literal type",
                     "optional": false,
                     "description": "",
-                    "line": 29,
+                    "line": 30,
                     "modifierKind": [
                         125
                     ]
@@ -476,11 +467,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-icon',\n  template: '<div>{{ someVariable }}</div>',\n  standalone: true,\n  imports: [CommonModule, MatIconModule],\n  templateUrl: './icon.component.html',\n  styleUrls: ['./icon.component.scss'],\n})\nexport class IconComponent {\n  // @Input() label: string | any;\n  @Input() primary: boolean = true;\n  @Input() name: string | undefined;\n  @Input() icon:\n    | 'Home'\n    | 'Accessibility'\n    | 'AccountCircle'\n    | 'Autorenew'\n    | 'Explore'\n    | 'Favorite'\n    | 'Payment'\n    | 'Question'\n    | 'Receipt'\n    | 'Room' = 'Home';\n\n  public iconMappings: { [key: string]: string } = {\n    Home: 'home',\n    Accessibility: 'accessibility',\n    AccountCircle: 'account_circle',\n    Autorenew: 'autorenew',\n    Explore: 'explore',\n    Favorite: 'favorite',\n    Payment: 'payment',\n    Question: 'question_answer',\n    Receipt: 'receipt',\n    Room: 'room',\n  };\n\n  public get iconClass(): string[] {\n    // Détermine le mode en fonction de la propriété 'primary'\n    const mode = this.primary\n      ? 'storybook-icon--primary'\n      : 'storybook-icon--secondary';\n  \n    // Récupère le nom de l'icône correspondant à la propriété 'icon'\n    const iconName = this.iconMappings[this.icon] || 'warning';\n  \n    // Retourne un tableau de classes CSS\n    return ['storybook-icon', `storybook-icon--${mode}`, `material-icons`].concat(iconName);\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-icon',\n  standalone: true,\n  imports: [CommonModule, MatIconModule],\n  templateUrl: './icon.component.html',\n  styleUrls: ['./icon.component.scss'],\n})\n\n\nexport class IconComponent {\n  @Input() primary: boolean = true;\n  @Input() icon:\n      | 'Home'\n      | 'Accessibility'\n      | 'AccountCircle'\n      | 'Autorenew'\n      | 'Explore'\n      | 'Favorite'\n      | 'Payment'\n      | 'Question'\n      | 'Receipt'\n      | 'Room' = 'Home';\n\n\n\n  public iconMappings: { [key: string]: string } = {\n    Home: 'home',\n    Accessibility: 'accessibility',\n    AccountCircle: 'account_circle',\n    Autorenew: 'autorenew',\n    Explore: 'explore',\n    Favorite: 'favorite',\n    Payment: 'payment',\n    Question: 'question_answer',\n    Receipt: 'receipt',\n    Room: 'room',\n  };\n\n  public get iconClass(): string[] {\n    // Détermine le mode en fonction de la propriété 'primary'op^\n    const mode = this.primary\n        ? 'storybook-icon--primary'\n        : 'storybook-icon--secondary';\n  \n  \n    // Retourne un tableau de classes CSS\n    return ['storybook-icon', `storybook-icon--${mode}`, `material-icons`];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '~@angular/material/prebuilt-themes/indigo-pink.css';",
+                    "data": "@import '~@angular/material/prebuilt-themes/indigo-pink.css';\n@import 'https://fonts.googleapis.com/icon?family=Material+Icons';\n\n",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -493,11 +484,11 @@
                         "name": "iconClass",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 42
+                        "line": 43
                     }
                 }
             },
-            "templateData": "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\"> \n\n\n<mat-icon [ngClass]=\"iconClass\">{{ iconMappings[icon] }}</mat-icon>\n<div>{{ name }}</div>"
+            "templateData": "<!-- <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  -->\n\n<div class=\"container\">\n<mat-icon [ngClass]=\"iconClass\">{{ iconMappings[icon] }}</mat-icon>\n</div>"
         },
         {
             "name": "PageComponent",
@@ -597,6 +588,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Accessibility",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "IconComponentStory",
+                "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Accessibility',               \n            }\n        }"
+            },
+            {
                 "name": "appConfig",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -607,14 +608,14 @@
                 "defaultValue": "{\n  providers: [provideRouter(routes), provideAnimationsAsync()]\n}"
             },
             {
-                "name": "Circle",
+                "name": "defaultArgs",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "IconComponentStory",
-                "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'AccountCircle',\n            primary: true,\n            name: 'AccountCircle',\n        }\n    })\n }"
+                "type": "object",
+                "defaultValue": "{ primary: true}"
             },
             {
                 "name": "Denary",
@@ -624,17 +625,47 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
-                "defaultValue": "{\n    args: {\n        text: 'Denary',\n    }\n}"
+                "defaultValue": "{\n  args: {\n    text: 'Denary',\n  }\n}"
             },
             {
-                "name": "Denary",
+                "name": "Explore",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "IconComponentStory",
-                "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Room',\n            primary: true,\n            name: 'Room',\n        }\n    })\n }"
+                "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Explore',               \n            }\n        }"
+            },
+            {
+                "name": "Favorite",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "IconComponentStory",
+                "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Favorite',               \n            }\n        }"
+            },
+            {
+                "name": "Home",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "IconComponentStory",
+                "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Home',               \n            }\n        }"
+            },
+            {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "IconComponentStory",
+                "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Autorenew',               \n            }\n        }"
             },
             {
                 "name": "LoggedIn",
@@ -704,7 +735,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n    component: ButtonComponent,\n  }"
+                "defaultValue": "{\n  component: ButtonComponent,\n}"
             },
             {
                 "name": "Meta",
@@ -724,17 +755,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
-                "defaultValue": "{\n    args: {\n        text: 'Nonary',\n    }\n}"
-            },
-            {
-                "name": "Nonary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "IconComponentStory",
-                "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Receipt',\n            primary: true,\n            name: 'Receipt',\n        }\n    })\n }"
+                "defaultValue": "{\n  args: {\n    text: 'Nonary',\n  }\n}"
             },
             {
                 "name": "Octonary",
@@ -744,17 +765,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
-                "defaultValue": "{\n    args: {\n        text: 'Octonary',\n    }\n}"
+                "defaultValue": "{\n  args: {\n    text: 'Octonary',\n  }\n}"
             },
             {
-                "name": "Octonary",
+                "name": "Payment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "IconComponentStory",
-                "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Question',\n            primary: true,\n            name: 'Question',\n        }\n    })\n }"
+                "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Payment',               \n            }\n        }"
+            },
+            {
+                "name": "Position",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "IconComponentStory",
+                "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Room',\n        }\n    }"
             },
             {
                 "name": "preview",
@@ -774,17 +805,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
-                "defaultValue": "{\n    args: {\n        text: 'Primary',\n    }\n}"
+                "defaultValue": "{\n  args: {\n    text: 'Primary',\n  }\n}"
             },
             {
-                "name": "Primary",
+                "name": "Profile_picture",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "IconComponentStory",
-                "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => {\n        // Utilisez args dans le corps de la fonction\n        console.log(args.icon, args.name);\n\n        return {\n            props: {\n                icon: 'Home',\n                primary: true,\n                name: 'Home',\n            },\n        };\n    },\n}"
+                "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'AccountCircle',               \n            }\n        }"
             },
             {
                 "name": "Quaternary",
@@ -794,17 +825,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
-                "defaultValue": "{\n    args: {\n        text: 'Quaternary',\n    }\n}"
+                "defaultValue": "{\n  args: {\n    text: 'Quaternary',\n  }\n}"
             },
             {
-                "name": "Quaternary",
+                "name": "Question",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "IconComponentStory",
-                "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Autorenew',\n            primary: true,\n            name: 'Autorenew',\n        }\n    })\n }"
+                "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Question',               \n            }\n        }"
             },
             {
                 "name": "Quinary",
@@ -814,17 +845,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
-                "defaultValue": "{\n    args: {\n        text: 'Quinary',\n    }\n}"
+                "defaultValue": "{\n  args: {\n    text: 'Quinary',\n  }\n}"
             },
             {
-                "name": "Quinary",
+                "name": "Receipt",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "IconComponentStory",
-                "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Explore',\n            primary: true,\n            name: 'Explore',\n    }\n })\n}"
+                "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Receipt',               \n            }\n        }"
             },
             {
                 "name": "Secondary",
@@ -834,17 +865,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
-                "defaultValue": "{\n    args: {\n        text: 'Secondary',\n    }\n}"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "IconComponentStory",
-                "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            primary: true,\n            icon: 'Accessibility',\n            name: 'Accessibility',\n        }\n    })\n }"
+                "defaultValue": "{\n  args: {\n    text: 'Secondary',\n  }\n}"
             },
             {
                 "name": "Senary",
@@ -854,17 +875,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
-                "defaultValue": "{\n    args: {\n        text: 'Senary',\n    }\n}"
-            },
-            {
-                "name": "Senary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "IconComponentStory",
-                "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Favorite',\n            primary: true,\n            name: 'Favorite',\n        }\n    })\n }"
+                "defaultValue": "{\n  args: {\n    text: 'Senary',\n  }\n}"
             },
             {
                 "name": "Septenary",
@@ -874,17 +885,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
-                "defaultValue": "{\n    args: {\n        text: 'Septenary',\n    }\n}"
-            },
-            {
-                "name": "Septenary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "IconComponentStory",
-                "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Payment',\n            primary: true,\n            name: 'Payment',\n        }\n    })\n }"
+                "defaultValue": "{\n  args: {\n    text: 'Septenary',\n  }\n}"
             },
             {
                 "name": "Tertiary",
@@ -894,7 +895,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
-                "defaultValue": "{\n    args: {\n        text: 'Tertiary',\n    }\n}"
+                "defaultValue": "{\n  args: {\n    text: 'Tertiary',\n  }\n}"
             }
         ],
         "functions": [],
@@ -946,38 +947,66 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/app.config.ts": [
-                {
-                    "name": "appConfig",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/app.config.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [provideRouter(routes), provideAnimationsAsync()]\n}"
-                }
-            ],
             "src/stories/icon.stories.ts": [
                 {
-                    "name": "Circle",
+                    "name": "Accessibility",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "IconComponentStory",
-                    "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'AccountCircle',\n            primary: true,\n            name: 'AccountCircle',\n        }\n    })\n }"
+                    "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Accessibility',               \n            }\n        }"
                 },
                 {
-                    "name": "Denary",
+                    "name": "defaultArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{ primary: true}"
+                },
+                {
+                    "name": "Explore",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "IconComponentStory",
-                    "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Room',\n            primary: true,\n            name: 'Room',\n        }\n    })\n }"
+                    "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Explore',               \n            }\n        }"
+                },
+                {
+                    "name": "Favorite",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IconComponentStory",
+                    "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Favorite',               \n            }\n        }"
+                },
+                {
+                    "name": "Home",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IconComponentStory",
+                    "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Home',               \n            }\n        }"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IconComponentStory",
+                    "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Autorenew',               \n            }\n        }"
                 },
                 {
                     "name": "Meta",
@@ -990,84 +1019,66 @@
                     "defaultValue": "{\n    component: IconComponent,\n}"
                 },
                 {
-                    "name": "Nonary",
+                    "name": "Payment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "IconComponentStory",
-                    "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Receipt',\n            primary: true,\n            name: 'Receipt',\n        }\n    })\n }"
+                    "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Payment',               \n            }\n        }"
                 },
                 {
-                    "name": "Octonary",
+                    "name": "Position",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "IconComponentStory",
-                    "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Question',\n            primary: true,\n            name: 'Question',\n        }\n    })\n }"
+                    "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Room',\n        }\n    }"
                 },
                 {
-                    "name": "Primary",
+                    "name": "Profile_picture",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "IconComponentStory",
-                    "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => {\n        // Utilisez args dans le corps de la fonction\n        console.log(args.icon, args.name);\n\n        return {\n            props: {\n                icon: 'Home',\n                primary: true,\n                name: 'Home',\n            },\n        };\n    },\n}"
+                    "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'AccountCircle',               \n            }\n        }"
                 },
                 {
-                    "name": "Quaternary",
+                    "name": "Question",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "IconComponentStory",
-                    "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Autorenew',\n            primary: true,\n            name: 'Autorenew',\n        }\n    })\n }"
+                    "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Question',               \n            }\n        }"
                 },
                 {
-                    "name": "Quinary",
+                    "name": "Receipt",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "IconComponentStory",
-                    "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Explore',\n            primary: true,\n            name: 'Explore',\n    }\n })\n}"
-                },
+                    "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Receipt',               \n            }\n        }"
+                }
+            ],
+            "src/app/app.config.ts": [
                 {
-                    "name": "Secondary",
+                    "name": "appConfig",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/icon.stories.ts",
+                    "file": "src/app/app.config.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "IconComponentStory",
-                    "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            primary: true,\n            icon: 'Accessibility',\n            name: 'Accessibility',\n        }\n    })\n }"
-                },
-                {
-                    "name": "Senary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/icon.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "IconComponentStory",
-                    "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Favorite',\n            primary: true,\n            name: 'Favorite',\n        }\n    })\n }"
-                },
-                {
-                    "name": "Septenary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/icon.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "IconComponentStory",
-                    "defaultValue": "{\n    render: (args: { icon: string, name?: string }) => ({\n        props: {\n            icon: 'Payment',\n            primary: true,\n            name: 'Payment',\n        }\n    })\n }"
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [provideRouter(routes), provideAnimationsAsync()]\n}"
                 }
             ],
             "src/stories/button.stories.ts": [
@@ -1079,7 +1090,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ButtonComponentStory",
-                    "defaultValue": "{\n    args: {\n        text: 'Denary',\n    }\n}"
+                    "defaultValue": "{\n  args: {\n    text: 'Denary',\n  }\n}"
                 },
                 {
                     "name": "Meta",
@@ -1089,7 +1100,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n    component: ButtonComponent,\n  }"
+                    "defaultValue": "{\n  component: ButtonComponent,\n}"
                 },
                 {
                     "name": "Nonary",
@@ -1099,7 +1110,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ButtonComponentStory",
-                    "defaultValue": "{\n    args: {\n        text: 'Nonary',\n    }\n}"
+                    "defaultValue": "{\n  args: {\n    text: 'Nonary',\n  }\n}"
                 },
                 {
                     "name": "Octonary",
@@ -1109,7 +1120,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ButtonComponentStory",
-                    "defaultValue": "{\n    args: {\n        text: 'Octonary',\n    }\n}"
+                    "defaultValue": "{\n  args: {\n    text: 'Octonary',\n  }\n}"
                 },
                 {
                     "name": "Primary",
@@ -1119,7 +1130,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ButtonComponentStory",
-                    "defaultValue": "{\n    args: {\n        text: 'Primary',\n    }\n}"
+                    "defaultValue": "{\n  args: {\n    text: 'Primary',\n  }\n}"
                 },
                 {
                     "name": "Quaternary",
@@ -1129,7 +1140,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ButtonComponentStory",
-                    "defaultValue": "{\n    args: {\n        text: 'Quaternary',\n    }\n}"
+                    "defaultValue": "{\n  args: {\n    text: 'Quaternary',\n  }\n}"
                 },
                 {
                     "name": "Quinary",
@@ -1139,7 +1150,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ButtonComponentStory",
-                    "defaultValue": "{\n    args: {\n        text: 'Quinary',\n    }\n}"
+                    "defaultValue": "{\n  args: {\n    text: 'Quinary',\n  }\n}"
                 },
                 {
                     "name": "Secondary",
@@ -1149,7 +1160,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ButtonComponentStory",
-                    "defaultValue": "{\n    args: {\n        text: 'Secondary',\n    }\n}"
+                    "defaultValue": "{\n  args: {\n    text: 'Secondary',\n  }\n}"
                 },
                 {
                     "name": "Senary",
@@ -1159,7 +1170,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ButtonComponentStory",
-                    "defaultValue": "{\n    args: {\n        text: 'Senary',\n    }\n}"
+                    "defaultValue": "{\n  args: {\n    text: 'Senary',\n  }\n}"
                 },
                 {
                     "name": "Septenary",
@@ -1169,7 +1180,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ButtonComponentStory",
-                    "defaultValue": "{\n    args: {\n        text: 'Septenary',\n    }\n}"
+                    "defaultValue": "{\n  args: {\n    text: 'Septenary',\n  }\n}"
                 },
                 {
                     "name": "Tertiary",
@@ -1179,7 +1190,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ButtonComponentStory",
-                    "defaultValue": "{\n    args: {\n        text: 'Tertiary',\n    }\n}"
+                    "defaultValue": "{\n  args: {\n    text: 'Tertiary',\n  }\n}"
                 }
             ],
             "src/stories/header.stories.ts": [
@@ -1365,7 +1376,7 @@
                 "linktype": "component",
                 "name": "IconComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -1531,7 +1542,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Circle",
+                "name": "Accessibility",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1541,7 +1552,47 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Denary",
+                "name": "defaultArgs",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Explore",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Favorite",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Home",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1561,7 +1612,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Nonary",
+                "name": "Payment",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1571,7 +1622,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Octonary",
+                "name": "Position",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1581,7 +1632,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Profile_picture",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1591,7 +1642,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Quaternary",
+                "name": "Question",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1601,37 +1652,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Quinary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Senary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Septenary",
+                "name": "Receipt",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
