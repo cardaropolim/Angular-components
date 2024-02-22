@@ -13,9 +13,11 @@ import { CommonModule } from '@angular/common';
 
 
 
+
 export class IconComponent {
   @Input() primary: boolean = true;
-  @Input() color: 'primary'| 'accent'| 'warn' = 'primary';
+  @Input() color: 'primary' | 'warn' | 'accent' = 'primary' ;
+  @Input() size: 'small' | 'medium' | 'large' =  'small';
   @Input() icon:
       | 'Home'
       | 'Accessibility'

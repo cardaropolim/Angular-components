@@ -7,6 +7,12 @@ const Meta: Meta<IconComponent> = {
     component: IconComponent,
 };
 
+const colors = {
+    blue: '#2949E5',
+    green: '#268713',
+    orange: '#D1451A',
+}
+
 export default {
     title: 'Components/Icon',
     imports : [
@@ -16,15 +22,19 @@ export default {
     component:IconComponent,
     parameters : {
         layout: 'centered',
-        
-        controls: {
-            expanded: true ,
+         controls: {
+           expanded: true ,
         },
         tags: ['autodocs'],
         argTypes: {
+        color: {
+            options: Object.keys(colors),
+            mapping: colors,
+            control: { type: 'select' },
             icon: { control: 'text' },
             onClick: { action: 'clicked' },
         },
+    },
         
         render: (args: { icon: string}) => ({
             props: {

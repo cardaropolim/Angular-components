@@ -34,7 +34,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-bfec4eca57b54d1f7e74e4d6f784b871077d1b842150ff1d4b526c81eeee12bc1c563c52c4827e0698021558d918b3eaad77d94969e8b0875586c153bb68c6a8",
+            "id": "component-AppComponent-d6f555fd57f41141805ad3c134e169095273a5a841c19a393711bffdebce18ff9f83b284b57138c2c26aaf16add47e711fdbc8279755cf7cf6001d43fb61eba7",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -81,7 +81,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterOutlet } from '@angular/router';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [CommonModule, RouterOutlet],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'storybook';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterOutlet } from '@angular/router';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [CommonModule, RouterOutlet],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'storybook';\n}\n\n\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -395,7 +395,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-b82f65d5f4d46310fdbed75ee8165d8eb8bd1545cf4a7b10c0094dc66cea5852ddb98812e5d893d227636bcf6a0b25aff069c4fa26bd73f658edd08eadf5966f",
+            "id": "component-IconComponent-bc02879434658feece3b63a587a76a711a57c62c481a0ae2d48ef4d58e25f3c5df6c2d437fa4dd304045d0d7029267107431fe8c34e37cccaed59c2f8b27849e",
             "file": "src/app/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -418,7 +418,7 @@
                     "defaultValue": "'Home'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 20,
                     "type": "\"Home\" | \"Accessibility\" | \"AccountCircle\" | \"Autorenew\" | \"Explore\" | \"Favorite\" | \"Payment\" | \"Question\" | \"Receipt\" | \"Room\"",
                     "decorators": []
                 },
@@ -427,7 +427,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 18,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -442,7 +442,7 @@
                     "type": "literal type",
                     "optional": false,
                     "description": "",
-                    "line": 30,
+                    "line": 34,
                     "modifierKind": [
                         125
                     ]
@@ -467,11 +467,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-icon',\n  standalone: true,\n  imports: [CommonModule, MatIconModule],\n  templateUrl: './icon.component.html',\n  styleUrls: ['./icon.component.scss'],\n})\n\n\nexport class IconComponent {\n  @Input() primary: boolean = true;\n  @Input() icon:\n      | 'Home'\n      | 'Accessibility'\n      | 'AccountCircle'\n      | 'Autorenew'\n      | 'Explore'\n      | 'Favorite'\n      | 'Payment'\n      | 'Question'\n      | 'Receipt'\n      | 'Room' = 'Home';\n\n\n\n  public iconMappings: { [key: string]: string } = {\n    Home: 'home',\n    Accessibility: 'accessibility',\n    AccountCircle: 'account_circle',\n    Autorenew: 'autorenew',\n    Explore: 'explore',\n    Favorite: 'favorite',\n    Payment: 'payment',\n    Question: 'question_answer',\n    Receipt: 'receipt',\n    Room: 'room',\n  };\n\n  public get iconClass(): string[] {\n    // Détermine le mode en fonction de la propriété 'primary'op^\n    const mode = this.primary\n        ? 'storybook-icon--primary'\n        : 'storybook-icon--secondary';\n  \n  \n    // Retourne un tableau de classes CSS\n    return ['storybook-icon', `storybook-icon--${mode}`, `material-icons`];\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-icon',\n  standalone: true,\n  imports: [CommonModule, MatIconModule],\n  templateUrl: './icon.component.html',\n  styleUrls: ['./icon.component.scss'],\n})\n\n\n\n\n\nexport class IconComponent {\n  @Input() primary: boolean = true;\n  // @Input() color: 'primary'| 'accent'| 'warn' = 'primary';\n  @Input() icon:\n      | 'Home'\n      | 'Accessibility'\n      | 'AccountCircle'\n      | 'Autorenew'\n      | 'Explore'\n      | 'Favorite'\n      | 'Payment'\n      | 'Question'\n      | 'Receipt'\n      | 'Room' = 'Home';\n\n\n\n  public iconMappings: { [key: string]: string } = {\n    Home: 'home',\n    Accessibility: 'accessibility',\n    AccountCircle: 'account_circle',\n    Autorenew: 'autorenew',\n    Explore: 'explore',\n    Favorite: 'favorite',\n    Payment: 'payment',\n    Question: 'question_answer',\n    Receipt: 'receipt',\n    Room: 'room',\n  };\n\n  public get iconClass(): string[] {\n    // Détermine le mode en fonction de la propriété 'primary'op^\n    const mode = this.primary\n        ? 'storybook-icon--primary'\n        : 'storybook-icon--secondary';\n  \n  \n    // Retourne un tableau de classes CSS\n    return ['storybook-icon', `storybook-icon--${mode}`, `material-icons`];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '~@angular/material/prebuilt-themes/indigo-pink.css';\n@import 'https://fonts.googleapis.com/icon?family=Material+Icons';\n\n",
+                    "data": "// .color-primary {\n//     color: red\n// }\n\n// .color-warn {\n//     color: blue\n// }\n\n// .color-accent {\n//     color: red\n// }",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -484,11 +484,11 @@
                         "name": "iconClass",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 43
+                        "line": 47
                     }
                 }
             },
-            "templateData": "<!-- <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  -->\n\n<div class=\"container\">\n<mat-icon [ngClass]=\"iconClass\">{{ iconMappings[icon] }}</mat-icon>\n</div>"
+            "templateData": "  <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  \n\n<div class=\"container\">\n<mat-icon [ngClass]=\"iconClass\">{{ iconMappings[icon] }}</mat-icon>\n</div>"
         },
         {
             "name": "PageComponent",
