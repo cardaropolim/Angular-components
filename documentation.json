@@ -29,7 +29,239 @@
     "injectables": [],
     "guards": [],
     "interceptors": [],
-    "classes": [],
+    "classes": [
+        {
+            "name": "InputComponentt",
+            "id": "class-InputComponentt-7471eda4e4435d77c5b503c431c3a7536707f6514395972b647559198502e67258dd5a87d606fc63516b1a065dd3348de0b3488a4f85b323193582af7541d458",
+            "file": "src/stories/input.stories.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import type { Meta, StoryObj } from \"@storybook/angular\";\nimport {MatInputModule} from '@angular/material/input';\nimport {\n  FormControl,\n  FormGroupDirective,\n  NgForm,\n  Validators,\n  FormsModule,\n  ReactiveFormsModule,\n} from '@angular/forms';\nimport {ErrorStateMatcher,} from '@angular/material/core';\nimport {MatFormFieldModule} from '@angular/material/form-field';\nimport { InputComponent } from '../app/input/input.component';\n\nconst Meta: Meta<InputComponent> = {\n    component: InputComponent,\n};\n\nexport default {\n    title: 'Components/Input',\n    imports: [\n        FormControl,\n  FormGroupDirective,\n  NgForm,\n  Validators,\n  FormsModule,\n  ReactiveFormsModule,\n  ErrorStateMatcher,\n  MatFormFieldModule,\n  MatInputModule\n    ],\n    component:InputComponent,\n    parameters : {\n        layout: 'centered',\n         controls: {\n           expanded: true ,\n    },\n    tags: ['autodocs'],\n},\n} as Meta<InputComponent>;\n\nexport class MyErrorStateMatcher implements ErrorStateMatcher {\n    emailFormControl!: FormControl<any>;\n\n    constructor(private input: InputComponent) { \n        this.emailFormControl = input.emailFormControl; \n      }\n    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {\n      const isSubmitted = form && form.submitted;\n      return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));\n    }\n  }\n  \n  \n  export class InputComponentt {\n    emailFormControl = new FormControl('', [\n      Validators.required,\n       Validators.email\n      ]);\n  \n    // matcher = new MyErrorStateMatcher();\n  \n  }\n  \n\ntype InputComponentStory = StoryObj<InputComponent>;\n\nexport const Primary: InputComponentStory = {\n  render: () => ({\n    props: {\n        label: 'mat_input',\n        primary: true,\n    }\n  })\n}\n",
+            "properties": [
+                {
+                    "name": "emailFormControl",
+                    "defaultValue": "new FormControl('', [\n      Validators.required,\n       Validators.email\n      ])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 57
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "extends": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "MyErrorStateMatcher",
+            "id": "class-MyErrorStateMatcher-7471eda4e4435d77c5b503c431c3a7536707f6514395972b647559198502e67258dd5a87d606fc63516b1a065dd3348de0b3488a4f85b323193582af7541d458",
+            "file": "src/stories/input.stories.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import type { Meta, StoryObj } from \"@storybook/angular\";\nimport {MatInputModule} from '@angular/material/input';\nimport {\n  FormControl,\n  FormGroupDirective,\n  NgForm,\n  Validators,\n  FormsModule,\n  ReactiveFormsModule,\n} from '@angular/forms';\nimport {ErrorStateMatcher,} from '@angular/material/core';\nimport {MatFormFieldModule} from '@angular/material/form-field';\nimport { InputComponent } from '../app/input/input.component';\n\nconst Meta: Meta<InputComponent> = {\n    component: InputComponent,\n};\n\nexport default {\n    title: 'Components/Input',\n    imports: [\n        FormControl,\n  FormGroupDirective,\n  NgForm,\n  Validators,\n  FormsModule,\n  ReactiveFormsModule,\n  ErrorStateMatcher,\n  MatFormFieldModule,\n  MatInputModule\n    ],\n    component:InputComponent,\n    parameters : {\n        layout: 'centered',\n         controls: {\n           expanded: true ,\n    },\n    tags: ['autodocs'],\n},\n} as Meta<InputComponent>;\n\nexport class MyErrorStateMatcher implements ErrorStateMatcher {\n    emailFormControl!: FormControl<any>;\n\n    constructor(private input: InputComponent) { \n        this.emailFormControl = input.emailFormControl; \n      }\n    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {\n      const isSubmitted = form && form.submitted;\n      return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));\n    }\n  }\n  \n  \n  export class InputComponentt {\n    emailFormControl = new FormControl('', [\n      Validators.required,\n       Validators.email\n      ]);\n  \n    // matcher = new MyErrorStateMatcher();\n  \n  }\n  \n\ntype InputComponentStory = StoryObj<InputComponent>;\n\nexport const Primary: InputComponentStory = {\n  render: () => ({\n    props: {\n        label: 'mat_input',\n        primary: true,\n    }\n  })\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "input",
+                        "type": "InputComponent",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 44,
+                "jsdoctags": [
+                    {
+                        "name": "input",
+                        "type": "InputComponent",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "emailFormControl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormControl<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 44
+                }
+            ],
+            "methods": [
+                {
+                    "name": "isErrorState",
+                    "args": [
+                        {
+                            "name": "control",
+                            "type": "FormControl | null",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "form",
+                            "type": "FormGroupDirective | NgForm | null",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "control",
+                            "type": "FormControl | null",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "form",
+                            "type": "FormGroupDirective | NgForm | null",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "extends": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "implements": [
+                "ErrorStateMatcher"
+            ]
+        },
+        {
+            "name": "MyErrorStateMatcher",
+            "id": "class-MyErrorStateMatcher-f8ffea1fc57e762560d5cc6744ebfa781b5956d216509f7fdeeec0e20fcb690c4758e47ee998db801d7286b0a8035b2ffed7a3c63ffe210bf7f9b92a18cc16b9-1",
+            "file": "src/app/input/input.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import { Component, NgModule } from '@angular/core';\nimport {MatInputModule} from '@angular/material/input';\nimport {\n  FormControl,\n  FormGroupDirective,\n  NgForm,\n  Validators,\n  FormsModule,\n  ReactiveFormsModule,\n} from '@angular/forms';\nimport {ErrorStateMatcher} from '@angular/material/core';\nimport {MatFormFieldModule} from '@angular/material/form-field';\nimport {MatIconModule} from '@angular/material/icon';\n\n\n\n@Component({\n  selector: 'app-input',\n  standalone: true,\n  imports: [\n    MatInputModule,\n    FormsModule,\n    MatFormFieldModule,\n    ReactiveFormsModule,\n    MatIconModule,\n  ],\n  templateUrl: './input.component.html',\n  styleUrl: './input.component.scss'\n})\n\nexport class InputComponent {\n  emailFormControl = new FormControl('', [\n    Validators.required,\n    Validators.email\n  ]);\n  \n  //  matcher = new MyErrorStateMatcher();\n  \n}\n\nexport class MyErrorStateMatcher implements ErrorStateMatcher {\n  emailFormControl!: FormControl<any>;\n  constructor(input: InputComponent) { \n    this.emailFormControl = input.emailFormControl; \n  }\n  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {\n    const isSubmitted = form && form.submitted;\n    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));\n  }\n}\n\n\n// @NgModule({\n//   declarations: [\n//     InputComponent,\n//   ],\n//   imports: [\n//     MatInputModule,\n//     FormsModule,\n//     MatFormFieldModule,\n//     ReactiveFormsModule\n//   ],\n//   providers: [\n//     InputComponent,\n//     MyErrorStateMatcher,\n//   ],\n// })\n// export class YourModule { }",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "input",
+                        "type": "InputComponent",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 42,
+                "jsdoctags": [
+                    {
+                        "name": "input",
+                        "type": "InputComponent",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "emailFormControl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormControl<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 42
+                }
+            ],
+            "methods": [
+                {
+                    "name": "isErrorState",
+                    "args": [
+                        {
+                            "name": "control",
+                            "type": "FormControl | null",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "form",
+                            "type": "FormGroupDirective | NgForm | null",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "control",
+                            "type": "FormControl | null",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "form",
+                            "type": "FormGroupDirective | NgForm | null",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "extends": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "implements": [
+                "ErrorStateMatcher"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "MyErrorStateMatcher-1"
+        }
+    ],
     "directives": [],
     "components": [
         {
@@ -395,7 +627,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-bc02879434658feece3b63a587a76a711a57c62c481a0ae2d48ef4d58e25f3c5df6c2d437fa4dd304045d0d7029267107431fe8c34e37cccaed59c2f8b27849e",
+            "id": "component-IconComponent-257d69feb4c70172fbf0dfd4a7867f3c51fab377c033e1ded0ee38b3f8f84f3678ee1fb9e2867f1d97434adf9d19cc580972e183e0f5938f8f9d5a6f06e8eecd",
             "file": "src/app/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -414,11 +646,20 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "\"primary\" | \"warn\" | \"accent\"",
+                    "decorators": []
+                },
+                {
                     "name": "icon",
                     "defaultValue": "'Home'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "\"Home\" | \"Accessibility\" | \"AccountCircle\" | \"Autorenew\" | \"Explore\" | \"Favorite\" | \"Payment\" | \"Question\" | \"Receipt\" | \"Room\"",
                     "decorators": []
                 },
@@ -429,6 +670,15 @@
                     "deprecationMessage": "",
                     "line": 18,
                     "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'small'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 }
             ],
@@ -442,7 +692,7 @@
                     "type": "literal type",
                     "optional": false,
                     "description": "",
-                    "line": 34,
+                    "line": 35,
                     "modifierKind": [
                         125
                     ]
@@ -467,11 +717,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-icon',\n  standalone: true,\n  imports: [CommonModule, MatIconModule],\n  templateUrl: './icon.component.html',\n  styleUrls: ['./icon.component.scss'],\n})\n\n\n\n\n\nexport class IconComponent {\n  @Input() primary: boolean = true;\n  // @Input() color: 'primary'| 'accent'| 'warn' = 'primary';\n  @Input() icon:\n      | 'Home'\n      | 'Accessibility'\n      | 'AccountCircle'\n      | 'Autorenew'\n      | 'Explore'\n      | 'Favorite'\n      | 'Payment'\n      | 'Question'\n      | 'Receipt'\n      | 'Room' = 'Home';\n\n\n\n  public iconMappings: { [key: string]: string } = {\n    Home: 'home',\n    Accessibility: 'accessibility',\n    AccountCircle: 'account_circle',\n    Autorenew: 'autorenew',\n    Explore: 'explore',\n    Favorite: 'favorite',\n    Payment: 'payment',\n    Question: 'question_answer',\n    Receipt: 'receipt',\n    Room: 'room',\n  };\n\n  public get iconClass(): string[] {\n    // Détermine le mode en fonction de la propriété 'primary'op^\n    const mode = this.primary\n        ? 'storybook-icon--primary'\n        : 'storybook-icon--secondary';\n  \n  \n    // Retourne un tableau de classes CSS\n    return ['storybook-icon', `storybook-icon--${mode}`, `material-icons`];\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatIconModule } from '@angular/material/icon';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-icon',\n  standalone: true,\n  imports: [CommonModule, MatIconModule],\n  templateUrl: './icon.component.html',\n  styleUrls: ['./icon.component.scss'],\n})\n\n\n\n\n\nexport class IconComponent {\n  @Input() primary: boolean = true;\n  @Input() color: 'primary' | 'warn' | 'accent' = 'primary' ;\n  @Input() size: 'small' | 'medium' | 'large' =  'small';\n  @Input() icon:\n      | 'Home'\n      | 'Accessibility'\n      | 'AccountCircle'\n      | 'Autorenew'\n      | 'Explore'\n      | 'Favorite'\n      | 'Payment'\n      | 'Question'\n      | 'Receipt'\n      | 'Room' = 'Home';\n\n\n\n  public iconMappings: { [key: string]: string } = {\n    Home: 'home',\n    Accessibility: 'accessibility',\n    AccountCircle: 'account_circle',\n    Autorenew: 'autorenew',\n    Explore: 'explore',\n    Favorite: 'favorite',\n    Payment: 'payment',\n    Question: 'question_answer',\n    Receipt: 'receipt',\n    Room: 'room',\n  };\n\n  public get iconClass(): string[] {\n    // Détermine le mode en fonction de la propriété 'primary'op^\n    const mode = this.primary\n        ? 'storybook-icon--primary'\n        : 'storybook-icon--secondary';\n  \n  \n    // Retourne un tableau de classes CSS\n    return ['storybook-icon', `storybook-icon--${mode}`, `material-icons`];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// .color-primary {\n//     color: red\n// }\n\n// .color-warn {\n//     color: blue\n// }\n\n// .color-accent {\n//     color: red\n// }",
+                    "data": "  .color-primary {\n      color: red\n  }\n  .color-warn {\n      color: blue\n  }\n  .color-accent {\n      color: red\n  }",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -484,11 +734,81 @@
                         "name": "iconClass",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 47
+                        "line": 48
                     }
                 }
             },
             "templateData": "  <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  \n\n<div class=\"container\">\n<mat-icon [ngClass]=\"iconClass\">{{ iconMappings[icon] }}</mat-icon>\n</div>"
+        },
+        {
+            "name": "InputComponent",
+            "id": "component-InputComponent-f8ffea1fc57e762560d5cc6744ebfa781b5956d216509f7fdeeec0e20fcb690c4758e47ee998db801d7286b0a8035b2ffed7a3c63ffe210bf7f9b92a18cc16b9",
+            "file": "src/app/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-input",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "emailFormControl",
+                    "defaultValue": "new FormControl('', [\n    Validators.required,\n    Validators.email\n  ])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatInputModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatFormFieldModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ReactiveFormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, NgModule } from '@angular/core';\nimport {MatInputModule} from '@angular/material/input';\nimport {\n  FormControl,\n  FormGroupDirective,\n  NgForm,\n  Validators,\n  FormsModule,\n  ReactiveFormsModule,\n} from '@angular/forms';\nimport {ErrorStateMatcher} from '@angular/material/core';\nimport {MatFormFieldModule} from '@angular/material/form-field';\nimport {MatIconModule} from '@angular/material/icon';\n\n\n\n@Component({\n  selector: 'app-input',\n  standalone: true,\n  imports: [\n    MatInputModule,\n    FormsModule,\n    MatFormFieldModule,\n    ReactiveFormsModule,\n    MatIconModule,\n  ],\n  templateUrl: './input.component.html',\n  styleUrl: './input.component.scss'\n})\n\nexport class InputComponent {\n  emailFormControl = new FormControl('', [\n    Validators.required,\n    Validators.email\n  ]);\n  \n  //  matcher = new MyErrorStateMatcher();\n  \n}\n\nexport class MyErrorStateMatcher implements ErrorStateMatcher {\n  emailFormControl!: FormControl<any>;\n  constructor(input: InputComponent) { \n    this.emailFormControl = input.emailFormControl; \n  }\n  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {\n    const isSubmitted = form && form.submitted;\n    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));\n  }\n}\n\n\n// @NgModule({\n//   declarations: [\n//     InputComponent,\n//   ],\n//   imports: [\n//     MatInputModule,\n//     FormsModule,\n//     MatFormFieldModule,\n//     ReactiveFormsModule\n//   ],\n//   providers: [\n//     InputComponent,\n//     MyErrorStateMatcher,\n//   ],\n// })\n// export class YourModule { }",
+            "styleUrl": "./input.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  \n\n\n<form class=\"example-form\">\n   <mat-form-field class=\"example-full-width\">\n     <mat-label>Email</mat-label>\n     <input type=\"email\" matInput [formControl]=\"emailFormControl\"\n            placeholder=\"Ex. pat@example.com\">\n     <mat-hint></mat-hint>\n     @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {\n       <mat-error>Please enter a valid email address</mat-error>\n     }\n     @if (emailFormControl.hasError('required')) {\n       <mat-error>Email is <strong>required</strong></mat-error>\n     }\n   </mat-form-field>\n </form>\n\n <form class=\"example-form\">\n   <mat-form-field class=\"example-full-width\">\n     <mat-label>Telephone</mat-label>\n     <span matTextPrefix>+31 &nbsp;</span>\n     <input type=\"tel\" matInput placeholder=\"68 455 7449\">\n     <mat-icon matSuffix>mode_edit</mat-icon>\n   </mat-form-field>\n </form>\n\n <form class = \"tp-form\">\n   <mat-form-field apperance=\"outlined\" class = \"tp-full-width\">\n        <textarea matInput placeholder = \"Enter your comment\"></textarea>\n     </mat-form-field>\n  </form>"
         },
         {
             "name": "PageComponent",
@@ -606,6 +926,16 @@
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
                 "defaultValue": "{\n  providers: [provideRouter(routes), provideAnimationsAsync()]\n}"
+            },
+            {
+                "name": "colors",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n    blue: '#2949E5',\n    green: '#268713',\n    orange: '#D1451A',\n}"
             },
             {
                 "name": "defaultArgs",
@@ -748,6 +1078,16 @@
                 "defaultValue": "{\n    component: IconComponent,\n}"
             },
             {
+                "name": "Meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InputComponent>",
+                "defaultValue": "{\n    component: InputComponent,\n}"
+            },
+            {
                 "name": "Nonary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -806,6 +1146,16 @@
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
                 "defaultValue": "{\n  args: {\n    text: 'Primary',\n  }\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "InputComponentStory",
+                "defaultValue": "{\n  render: () => ({\n    props: {\n        label: 'mat_input',\n        primary: true,\n    }\n  })\n}"
             },
             {
                 "name": "Profile_picture",
@@ -923,6 +1273,17 @@
                 "kind": 183
             },
             {
+                "name": "InputComponentStory",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InputComponent>",
+                "file": "src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -957,6 +1318,16 @@
                     "deprecationMessage": "",
                     "type": "IconComponentStory",
                     "defaultValue": "{\n            args: {\n                ...defaultArgs,\n                icon: 'Accessibility',               \n            }\n        }"
+                },
+                {
+                    "name": "colors",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n    blue: '#2949E5',\n    green: '#268713',\n    orange: '#D1451A',\n}"
                 },
                 {
                     "name": "defaultArgs",
@@ -1257,6 +1628,28 @@
                     "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
+            "src/stories/input.stories.ts": [
+                {
+                    "name": "Meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InputComponent>",
+                    "defaultValue": "{\n    component: InputComponent,\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "InputComponentStory",
+                    "defaultValue": "{\n  render: () => ({\n    props: {\n        label: 'mat_input',\n        primary: true,\n    }\n  })\n}"
+                }
+            ],
             ".storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -1299,6 +1692,19 @@
                     "kind": 183
                 }
             ],
+            "src/stories/input.stories.ts": [
+                {
+                    "name": "InputComponentStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InputComponent>",
+                    "file": "src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/stories/header.stories.ts": [
                 {
                     "name": "Story",
@@ -1329,7 +1735,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 2,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -1375,6 +1781,24 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "IconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/input/input.component.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "MyErrorStateMatcher",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
                 "status": "low"
@@ -1552,6 +1976,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "colors",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "defaultArgs",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -1653,6 +2087,44 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Receipt",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/input.stories.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "InputComponentt",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/input.stories.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "MyErrorStateMatcher",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

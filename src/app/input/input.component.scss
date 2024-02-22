@@ -1,0 +1,21 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%; 
+    color: rgb(37, 139, 37);
+}
+
+:-webkit-example-form-placeholder{
+    background-color: rgb(172, 172, 52);
+   }
+
+.tp-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%; 
+    color: green;
+}
+
+.tp-form::placeholder{
+    background-color: rgb(172, 172, 52);
+   }
