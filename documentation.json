@@ -902,6 +902,57 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "ToolbarComponent",
+            "id": "component-ToolbarComponent-d97d02d2ac5c285a6b870a6f86ce60f58181ff31bd986dc8d1e88c19307e27f35150288bb3bfa4be9b8d216d5d6bd641a384ee71c14e4a399ea391c12006d14f",
+            "file": "src/app/toolbar/toolbar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-toolbar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./toolbar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatToolbarModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {MatToolbarModule} from '@angular/material/toolbar';\nimport { MatIconModule } from '@angular/material/icon';\nimport {MatButtonModule} from '@angular/material/button';\n@Component({\n  selector: 'app-toolbar',\n  standalone: true,\n  imports: [\n    MatToolbarModule,\n    MatIconModule,\n    MatButtonModule,\n  ],\n  templateUrl: './toolbar.component.html',\n  styleUrl: './toolbar.component.scss'\n})\nexport class ToolbarComponent {\n\n}\n",
+            "styleUrl": "./toolbar.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  \n\n\n<mat-toolbar class=\"toolbar\">\n    <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with menu icon\">\n      <mat-icon>menu</mat-icon>\n    </button>\n    <span>CoTown</span>\n    <span class=\"example-spacer\"></span>\n    <span class=\"example-spacer\"></span>\n    <button mat-icon-button class=\"example-icon favorite-icon\" aria-label=\"Example icon-button with heart icon\">\n      <mat-icon>favorite</mat-icon>\n    </button>\n    <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with Notification icon\">\n      <mat-icon>notifications_none</mat-icon>\n    </button>\n  </mat-toolbar>"
         }
     ],
     "modules": [],
@@ -946,6 +997,16 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{ primary: true}"
+            },
+            {
+                "name": "defaultArgs",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/toolbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{ type: toolbar, primary: true }"
             },
             {
                 "name": "Denary",
@@ -1088,6 +1149,16 @@
                 "defaultValue": "{\n    component: InputComponent,\n}"
             },
             {
+                "name": "Meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/toolbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ToolbarComponent>",
+                "defaultValue": "{\n    component: ToolbarComponent,\n}"
+            },
+            {
                 "name": "Nonary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1158,6 +1229,16 @@
                 "defaultValue": "{\n  render: () => ({\n    props: {\n        label: 'mat_input',\n        primary: true,\n    }\n  })\n}"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/toolbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ToolbarComponentStory",
+                "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'lol',\n        }\n      \n}"
+            },
+            {
                 "name": "Profile_picture",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1216,6 +1297,16 @@
                 "deprecationMessage": "",
                 "type": "ButtonComponentStory",
                 "defaultValue": "{\n  args: {\n    text: 'Secondary',\n  }\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/toolbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ToolbarComponentStory",
+                "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'haha',\n        }\n    \n}"
             },
             {
                 "name": "Senary",
@@ -1300,6 +1391,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<PageComponent>",
                 "file": "src/stories/page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "ToolbarComponentStory",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToolbarComponent>",
+                "file": "src/stories/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1450,6 +1552,48 @@
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
                     "defaultValue": "{\n  providers: [provideRouter(routes), provideAnimationsAsync()]\n}"
+                }
+            ],
+            "src/stories/toolbar.stories.ts": [
+                {
+                    "name": "defaultArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/toolbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{ type: toolbar, primary: true }"
+                },
+                {
+                    "name": "Meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/toolbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ToolbarComponent>",
+                    "defaultValue": "{\n    component: ToolbarComponent,\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/toolbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ToolbarComponentStory",
+                    "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'lol',\n        }\n      \n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/toolbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ToolbarComponentStory",
+                    "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'haha',\n        }\n    \n}"
                 }
             ],
             "src/stories/button.stories.ts": [
@@ -1730,6 +1874,19 @@
                     "description": "",
                     "kind": 183
                 }
+            ],
+            "src/stories/toolbar.stories.ts": [
+                {
+                    "name": "ToolbarComponentStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToolbarComponent>",
+                    "file": "src/stories/toolbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
             ]
         }
     },
@@ -1801,6 +1958,15 @@
                 "name": "MyErrorStateMatcher",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/toolbar/toolbar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToolbarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -2164,6 +2330,46 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "defaultArgs",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
