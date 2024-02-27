@@ -905,7 +905,7 @@
         },
         {
             "name": "ToolbarComponent",
-            "id": "component-ToolbarComponent-d97d02d2ac5c285a6b870a6f86ce60f58181ff31bd986dc8d1e88c19307e27f35150288bb3bfa4be9b8d216d5d6bd641a384ee71c14e4a399ea391c12006d14f",
+            "id": "component-ToolbarComponent-73d6b8f98ba087f26e8178cb4401192b066bc6daa28205948e0d34e112c48a704fd57f179853abb7972db00e23822f585e5401de5a16ed7408507f08428a91e2",
             "file": "src/app/toolbar/toolbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -941,18 +941,22 @@
                 {
                     "name": "MatButtonModule",
                     "type": "module"
+                },
+                {
+                    "name": "MatFormFieldModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {MatToolbarModule} from '@angular/material/toolbar';\nimport { MatIconModule } from '@angular/material/icon';\nimport {MatButtonModule} from '@angular/material/button';\n@Component({\n  selector: 'app-toolbar',\n  standalone: true,\n  imports: [\n    MatToolbarModule,\n    MatIconModule,\n    MatButtonModule,\n  ],\n  templateUrl: './toolbar.component.html',\n  styleUrl: './toolbar.component.scss'\n})\nexport class ToolbarComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {MatToolbarModule} from '@angular/material/toolbar';\nimport { MatIconModule } from '@angular/material/icon';\nimport {MatButtonModule} from '@angular/material/button';\nimport {MatFormFieldModule} from '@angular/material/form-field';\n@Component({\n  selector: 'app-toolbar',\n  standalone: true,\n  imports: [\n    MatToolbarModule,\n    MatIconModule,\n    MatButtonModule,\n    MatFormFieldModule,\n  ],\n  templateUrl: './toolbar.component.html',\n  styleUrl: './toolbar.component.scss'\n})\nexport class ToolbarComponent {\n\n}\n",
             "styleUrl": "./toolbar.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  \n\n\n<mat-toolbar class=\"toolbar\">\n    <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with menu icon\">\n      <mat-icon>menu</mat-icon>\n    </button>\n    <span>CoTown</span>\n    <span class=\"example-spacer\"></span>\n    <span class=\"example-spacer\"></span>\n    <button mat-icon-button class=\"example-icon favorite-icon\" aria-label=\"Example icon-button with heart icon\">\n      <mat-icon>favorite</mat-icon>\n    </button>\n    <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with Notification icon\">\n      <mat-icon>notifications_none</mat-icon>\n    </button>\n  </mat-toolbar>"
+            "templateData": "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  \n\n\n<mat-toolbar class=\"toolbar\">\n  <mat-toolbar-row>\n    <span>Home</span>\n    <span class=\"example-spacer\"></span>\n    <button mat-icon-button class=\"example-icon favorite-icon\" aria-label=\"Example icon-button with heart icon\">\n      <mat-icon>favorite_border</mat-icon>\n    </button>\n    <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with Notification icon\">\n      <mat-icon>notifications_none</mat-icon>\n    </button>\n  </mat-toolbar-row>\n\n     <mat-toolbar-row>\n     <form class=\"tp\">\n      <mat-icon>search</mat-icon><textarea matInput placeholder = \"Search job or location\"></textarea><mat-icon>clear_all</mat-icon>\n     </form> \n    </mat-toolbar-row> "
         }
     ],
     "modules": [],
@@ -1006,7 +1010,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{ type: toolbar, primary: true }"
+                "defaultValue": "{ type: 'toolbar' , primary: true }"
             },
             {
                 "name": "Denary",
@@ -1155,7 +1159,7 @@
                 "file": "src/stories/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ToolbarComponent>",
+                "type": "MetaComponent<ToolbarComponent>",
                 "defaultValue": "{\n    component: ToolbarComponent,\n}"
             },
             {
@@ -1306,7 +1310,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ToolbarComponentStory",
-                "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'haha',\n        }\n    \n}"
+                "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'haha',\n\n        }   \n}"
             },
             {
                 "name": "Senary",
@@ -1563,7 +1567,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{ type: toolbar, primary: true }"
+                    "defaultValue": "{ type: 'toolbar' , primary: true }"
                 },
                 {
                     "name": "Meta",
@@ -1572,7 +1576,7 @@
                     "file": "src/stories/toolbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<ToolbarComponent>",
+                    "type": "MetaComponent<ToolbarComponent>",
                     "defaultValue": "{\n    component: ToolbarComponent,\n}"
                 },
                 {
@@ -1593,7 +1597,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ToolbarComponentStory",
-                    "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'haha',\n        }\n    \n}"
+                    "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'haha',\n\n        }   \n}"
                 }
             ],
             "src/stories/button.stories.ts": [

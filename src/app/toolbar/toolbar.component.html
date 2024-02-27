@@ -2,16 +2,19 @@
 
 
 <mat-toolbar class="toolbar">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>CoTown</span>
-    <span class="example-spacer"></span>
+  <mat-toolbar-row>
+    <span>Home</span>
     <span class="example-spacer"></span>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
+      <mat-icon>favorite_border</mat-icon>
     </button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with Notification icon">
       <mat-icon>notifications_none</mat-icon>
     </button>
-  </mat-toolbar>
+  </mat-toolbar-row>
+
+     <mat-toolbar-row>
+     <form class="tp">
+      <mat-icon>search</mat-icon><textarea matInput placeholder = "Search job or location"></textarea><mat-icon>clear_all</mat-icon>
+     </form> 
+    </mat-toolbar-row> 

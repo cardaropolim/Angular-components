@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ButtonComponent {
 
-@Input() text: string = '';
+@Input() text: string = '{{ text }}';
 @Input() primary: boolean = true;
 @Input() buttonType: 'Primary' | 'Secondary' | 'Tertiary' | 'Quaternary' | 'Quinary' | 'Senary' | 'Septenary' | 'Octonary' | 'Nonary' | 'Denary' = 'Primary';
 // @Input() backgroundColor: 
