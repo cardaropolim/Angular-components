@@ -32,7 +32,7 @@ export default {
   },
 } as Meta<ButtonComponent>;
 
-const defaultArgs = { primary: true};
+const defaultArgs = { primary: true };
 type ButtonComponentStory = StoryObj<ButtonComponent>;
 
 export const Primary: ButtonComponentStory = {
