@@ -39,29 +39,6 @@ export default {
     tags: ['autodocs'],
 },
 } as Meta<InputComponent>;
-
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-    emailFormControl!: FormControl<any>;
-
-    constructor(private input: InputComponent) { 
-        this.emailFormControl = input.emailFormControl; 
-      }
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-      const isSubmitted = form && form.submitted;
-      return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-    }
-  }
-  
-  
-  export class InputComponentt {
-    emailFormControl = new FormControl('', [
-      Validators.required,
-       Validators.email
-      ]);
-  
-    // matcher = new MyErrorStateMatcher();
-  
-  }
   
 
 type InputComponentStory = StoryObj<InputComponent>;

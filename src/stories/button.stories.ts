@@ -1,6 +1,5 @@
-import { componentWrapperDecorator, type Meta, type StoryObj } from "@storybook/angular";
+import { type Meta, type StoryObj } from "@storybook/angular";
 import { ButtonComponent } from "../app/button/button.component";
-// import {ArgTypes} from "@storybook/blocks"
 
 const Meta: Meta<ButtonComponent> = {
   component: ButtonComponent,
@@ -11,12 +10,10 @@ export default {
   component: ButtonComponent,
     ArgTypes: {
       background: { control: 'color' },
-      type: { control: 'string' }
+      type: { control: 'string' },
+      color: { control: { type: 'color', presetColors: ['primary', 'accent', 'warn']} }
     },
-  // decorators: [
-  //   componentWrapperDecorator(ButtonComponent, ({ args }) => {
-  //   }),
-  // ],
+
   parameters: {
     layout: 'centered',
     controls: {
@@ -41,7 +38,9 @@ type ButtonComponentStory = StoryObj<ButtonComponent>;
 export const Primary: ButtonComponentStory = {
   args: {
     ...defaultArgs,
-    text: 'Primary',
+    text: 'payment',
+    color: 'primary',
+    text2: 'Payment'
     
   }
 };
@@ -49,62 +48,69 @@ export const Primary: ButtonComponentStory = {
 export const Secondary: ButtonComponentStory = {
   args: {
     ...defaultArgs,
-    text: 'Secondary',
+    text: 'favorite',
+     color: "accent",
+     text2: 'Favorite',
+  
   }
 };
 
 export const Tertiary: ButtonComponentStory = {
   args: {
     ...defaultArgs,
-    text: 'Tertiary',
+    text: 'clear-all',
+    color: "warn",
+    text2: 'Clear'
+    
   }
 };
 
 export const Quaternary: ButtonComponentStory = {
   args: {
     ...defaultArgs,
-    text: 'Quaternary',
+    text: 'room',
+    text2: 'Position'
   }
 };
 
-export const Quinary: ButtonComponentStory = {
-  args: {
-    ...defaultArgs,
-    text: 'Quinary',
-  }
-};
+// export const Quinary: ButtonComponentStory = {
+//   args: {
+//     ...defaultArgs,
+//     text: 'Quinary',
+//   }
+// };
 
-export const Senary: ButtonComponentStory = {
-  args: {
-    ...defaultArgs,
-    text: 'Senary',
-  }
-};
+// export const Senary: ButtonComponentStory = {
+//   args: {
+//     ...defaultArgs,
+//     text: 'Senary',
+//   }
+// };
 
-export const Septenary: ButtonComponentStory = {
-  args: {
-    ...defaultArgs,
-    text: 'Septenary',
-  }
-};
+// export const Septenary: ButtonComponentStory = {
+//   args: {
+//     ...defaultArgs,
+//     text: 'Septenary',
+//   }
+// };
 
-export const Octonary: ButtonComponentStory = {
-  args: {
-    ...defaultArgs,
-    text: 'Octonary',
-  }
-};
+// export const Octonary: ButtonComponentStory = {
+//   args: {
+//     ...defaultArgs,
+//     text: 'Octonary',
+//   }
+// };
 
-export const Nonary: ButtonComponentStory = {
-  args: {
-    ...defaultArgs,
-    text: 'Nonary',
-  }
-};
+// export const Nonary: ButtonComponentStory = {
+//   args: {
+//     ...defaultArgs,
+//     text: 'Nonary',
+//   }
+// };
 
-export const Denary: ButtonComponentStory = {
-  args: {
-    ...defaultArgs,
-    text: 'Denary',
-  }
-};
+// export const Denary: ButtonComponentStory = {
+//   args: {
+//     ...defaultArgs,
+//     text: 'Denary',
+//   }
+// };

@@ -3,6 +3,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { ToolbarComponent } from "../app/toolbar/toolbar.component";
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 const Meta: MetaComponent<ToolbarComponent> = {
     component: ToolbarComponent,
@@ -14,6 +18,9 @@ export default {
         MatButtonModule,
         MatIconModule,
         MatToolbarModule,
+        MatAutocompleteModule,
+        MatInputModule,
+        MatFormFieldModule,
     ],
     component: ToolbarComponent, 
     parameters: {
@@ -26,6 +33,7 @@ export default {
 } as MetaComponent<ToolbarComponent>;
 
 type ToolbarComponentStory = StoryObj<ToolbarComponent>;
+
 const defaultArgs = { type: 'toolbar' , primary: true }
 export const Primary: ToolbarComponentStory = {
         args: {

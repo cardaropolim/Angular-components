@@ -8,40 +8,7 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-.storybook-button--primary {
-    background-color: #498171;
-    color: white;
-    border: 2px solid #498171;
-}
+ .primary {
+     color:green
+ }
 
-.storybook-button--primary:hover {
-    background-color: #3b7162;
-    color: white;
-}
-
-.storybook-button--primary:active {
-    background-color: #3f917a;
-    color: white;
-}
-
-.storybook-button--secondary {
-    background-color: #498171;
-    color: white;
-    border: 2px solid #498171;
-}
-
-.storybook-button--secondary:hover {
-    background-color: #3b7162;
-    color: white;
-}
-
-.storybook-button--tertiary {
-    background-color: #498171;
-    color: white;
-    border: 2px solid #498171;
-}
-
-.storybook-button--tertiary:hover {
-    background-color: #3b7162;
-    color: white;
-}

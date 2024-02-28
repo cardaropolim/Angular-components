@@ -1,11 +1,19 @@
 .example-spacer{
     flex: 1 100%;
   }
-.tp {
-width: 500px;
-}
-
+  
+  
   .toolbar {
-    background-color: rgb(222, 217, 217);
-    color: black
+    background-color: rgb(235, 226, 226);
+    color: black;
+   
+  }
+
+  .clear {
+  left: -55%;
+  top: -60%;
+  }
+
+  .mat-mdc-form-field-infix {
+ width: 280px;
   }
