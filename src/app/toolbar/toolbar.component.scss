@@ -1,19 +1,23 @@
 .example-spacer{
     flex: 1 100%;
   }
-  
-  
+
   .toolbar {
     background-color: rgb(235, 226, 226);
     color: black;
-   
   }
 
   .clear {
-  left: -55%;
-  top: -60%;
+  left: -10%;
+  top: -30%;
   }
 
-  .mat-mdc-form-field-infix {
- width: 280px;
+  .search {
+    right: -5%
+    top -30%
+  }
+
+  .example-full-width {
+    width : 71em;
+    height: 0,5em;
   }

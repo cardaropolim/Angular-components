@@ -2,9 +2,9 @@
 
 
 <form class="example-form">
-   <mat-form-field class="example-full-width">
+   <mat-form-field apperance="standard" class="example-full-width">
      <mat-label>Email</mat-label>
-     <input type="email" matInput [formControl]="emailFormControl"
+     <input  type="email" matInput [formControl]="emailFormControl"
             placeholder="Ex. pat@example.com">
      <mat-hint></mat-hint>
      @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
@@ -17,7 +17,7 @@
  </form>
 
  <form class="example-form">
-   <mat-form-field class="example-full-width">
+   <mat-form-field apperance="standard" class="example-full-width">
      <mat-label>Telephone</mat-label>
      <span matTextPrefix>+31 &nbsp;</span>
      <input type="tel" matInput placeholder="68 455 7449">
@@ -26,7 +26,7 @@
  </form>
 
  <form class = "tp-form">
-   <mat-form-field apperance="outlined" class = "tp-full-width">
+   <mat-form-field apperance="standard" class = "tp-full-width">
         <textarea matInput placeholder = "Enter your comment"></textarea>
      </mat-form-field>
   </form>

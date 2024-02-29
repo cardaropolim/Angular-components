@@ -1,11 +1,11 @@
-.green {
+.primary {
   color: 198;
 }
 
-.red {
+.warn {
   color: red;
 }
 
-.orange {
+.accent {
   color: rgb(229, 219, 85);
 }/*# sourceMappingURL=chips.component.css.map */

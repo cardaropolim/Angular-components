@@ -1,0 +1,8 @@
+<mat-form-field>
+    <mat-label>Status</mat-label>
+    <mat-select [formControl]="Status" multiple>
+      @for (Status of Statuslist; track Status) {
+        <mat-option [value]="Status">{{Status}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>

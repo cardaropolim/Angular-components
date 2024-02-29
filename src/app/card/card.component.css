@@ -1,0 +1,14 @@
+.card {
+  background-color: white;
+  color: black;
+  width: 80vw;
+}
+
+.mat-card-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=card.component.css.map */

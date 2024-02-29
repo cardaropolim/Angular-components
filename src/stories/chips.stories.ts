@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/angular";
 import { ChipsComponent } from "../app/chips/chips.component";
 
+
 const Meta: Meta<ChipsComponent> = {
     component: ChipsComponent,
 };
@@ -10,8 +11,8 @@ export default {
     component: ChipsComponent,
     ArgTypes: {
         background: { control: 'color' },
-      type: { control: 'string' },
-      color: { control: { type: 'color', presetColors: ['primary', 'accent', 'warn']} }
+        type: { control: 'string' },
+        color: { control: { type: 'color', presetColors: ['primary', 'accent', 'warn']} }
     },
 
     parameters: {
