@@ -13,12 +13,9 @@ import {MatChipsModule} from '@angular/material/chips';
 })
 export class ChipsComponent {
 
-  
-
   @Input() text: string = '{{ text }}';
   @Input() primary: boolean = true;
   @Input() color: string = '{{color}}';
-
 
 }
 

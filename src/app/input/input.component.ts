@@ -34,8 +34,6 @@ export class InputComponent {
     Validators.email
   ]);
   
-  //  matcher = new MyErrorStateMatcher();
-  
 }
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -48,21 +46,3 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
-
-
-// @NgModule({
-//   declarations: [
-//     InputComponent,
-//   ],
-//   imports: [
-//     MatInputModule,
-//     FormsModule,
-//     MatFormFieldModule,
-//     ReactiveFormsModule
-//   ],
-//   providers: [
-//     InputComponent,
-//     MyErrorStateMatcher,
-//   ],
-// })
-// export class YourModule { }

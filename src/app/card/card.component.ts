@@ -14,10 +14,4 @@ export class CardComponent {
 
 }
 
-export class CardOverviewExample {
-  // centres = [
-  //   {
-  //     img: 'src/assets/images/C.jpg',
-  //   }
-  // ]
-}
+

@@ -18,10 +18,6 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class ButtonComponent {
 
-// const primary = {
-//   color: ;
-// }
-
 @Input() text: string = '{{ text }}';
 @Input() primary: boolean = true;
 @Input() color: 'primary' | 'accent' | 'warn' = 'primary';

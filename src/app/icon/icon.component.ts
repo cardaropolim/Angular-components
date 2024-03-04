@@ -10,10 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./icon.component.scss'],
 })
 
-
-
-
-
 export class IconComponent {
   @Input() primary: boolean = true;
   @Input() color: 'primary' | 'warn' | 'accent' = 'primary' ;
@@ -30,8 +26,6 @@ export class IconComponent {
       | 'Receipt'
       | 'Room' = 'Home';
 
-
-
   public iconMappings: { [key: string]: string } = {
     Home: 'home',
     Accessibility: 'accessibility',
@@ -46,13 +40,11 @@ export class IconComponent {
   };
 
   public get iconClass(): string[] {
-    // Détermine le mode en fonction de la propriété 'primary'op^
+
     const mode = this.primary
         ? 'storybook-icon--primary'
         : 'storybook-icon--secondary';
   
-  
-    // Retourne un tableau de classes CSS
     return ['storybook-icon', `storybook-icon--${mode}`, `material-icons`];
   }
 }

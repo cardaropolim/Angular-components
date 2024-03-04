@@ -17,20 +17,8 @@ export default {
         MatSelectModule,
         FormsModule,
     ],
-    ArgTypes: {
-        background: { control: 'color' },
-        type: { control: 'string' }
-    },
     parameters: {
         layout: 'centered',
-        controls: {
-            expanded: true,
-            matchers: {
-                color: /(background|color)$/i,
-                date: /Date$/,
-
-            },
-        },
         tags: ['autodocs'],
         render: (args: SelectComponent) => ({
             props: {
@@ -46,10 +34,4 @@ export default {
 type SelectComponentStory = StoryObj<SelectComponent>
 
 export const Primary: SelectComponentStory = {
-    render: () => ({
-        props: {
-          label: 'Button',
-          primary: true,
-        },
-      }),
 }
