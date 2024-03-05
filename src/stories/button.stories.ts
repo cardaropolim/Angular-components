@@ -6,7 +6,7 @@ const Meta: Meta<ButtonComponent> = {
 };
 
 export default {
-  title: 'Components/button',
+  title: 'Components/Button',
   component: ButtonComponent,
     ArgTypes: {
       background: { control: 'color' },

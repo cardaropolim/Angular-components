@@ -1,6 +1,7 @@
-import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, Input } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-table',
@@ -8,6 +9,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
   imports: [
     MatTableModule,
     MatPaginatorModule,
+    MatCheckboxModule,
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss'
@@ -42,3 +44,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 {name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},
 {name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},
 ]
+
+
+
+
+// ./table.component.html'

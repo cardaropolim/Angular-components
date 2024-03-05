@@ -7,7 +7,7 @@ const Meta: Meta<ChipsComponent> = {
 };
 
 export default { 
-    title: 'Components/chips',
+    title: 'Components/Chips',
     component: ChipsComponent,
     ArgTypes: {
         background: { control: 'color' },

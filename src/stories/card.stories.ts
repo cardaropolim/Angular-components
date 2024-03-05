@@ -7,7 +7,7 @@ const Meta: Meta<CardComponent> = {
 }
 
 export default {
-    title: 'Components/card',
+    title: 'Components/Card',
     component: CardComponent,
     ArgTypes: {
         background: { control: 'color' },

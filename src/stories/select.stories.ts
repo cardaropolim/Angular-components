@@ -3,6 +3,7 @@ import { SelectComponent } from "../app/select/select.component";
 import {FormControl, FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { CommonModule } from "@angular/common";
 
 const Meta: Meta<SelectComponent> = {
     component: SelectComponent,
@@ -17,6 +18,9 @@ export default {
         MatSelectModule,
         FormsModule,
     ],
+    // decorators: [
+        
+    // ],
     parameters: {
         layout: 'centered',
         tags: ['autodocs'],
@@ -34,4 +38,5 @@ export default {
 type SelectComponentStory = StoryObj<SelectComponent>
 
 export const Primary: SelectComponentStory = {
+
 }
