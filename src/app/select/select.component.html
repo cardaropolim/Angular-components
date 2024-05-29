@@ -1,34 +1,8 @@
- <!-- <mat-form-field>
+  <mat-form-field>
     <mat-label>Status</mat-label>
     <mat-select [formControl]="status" multiple>
       @for (status of statusList; track status) {
         <mat-option [value]="status">{{status}}</mat-option>
       }
     </mat-select>
-  </mat-form-field>  -->
-
-  <!-- <mat-form-field>
-    <mat-label>Status</mat-label>
-    <mat-select [formControl]="status" multiple>
-      <mat-option *ngFor="let statusItem of statusList" [value]="statusItem">{{ statusItem }}</mat-option>
-    </mat-select>
-  </mat-form-field> -->
-
-
-  <!-- <mat-form-field>
-    <mat-label>Statut</mat-label>
-    <mat-select [formControl]="status" multiple>
-      <mat-option *ngFor="let Status of statuslist; trackBy: trackByStatusFn" [value]="status">{{status}}</mat-option>
-    </mat-select>
-  </mat-form-field> -->
-
-  <form [formGroup]="form" (ngSubmit)="submit()">
-    <mat-form-field>
-      <mat-label>Select Status</mat-label>
-      <mat-select formControlName="S" multiple>
-        <mat-option *ngFor="let statusList of statusList" [value]="statusList.value">
-          {{statusList.viewValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </form>
+  </mat-form-field>

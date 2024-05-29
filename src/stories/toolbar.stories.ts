@@ -38,7 +38,6 @@ const defaultArgs = { type: 'toolbar' , primary: true }
 export const Primary: ToolbarComponentStory = {
         args: {
             ...defaultArgs,
-            label: 'lol',
         }
       
 }
@@ -46,7 +45,5 @@ export const Primary: ToolbarComponentStory = {
 export const Secondary: ToolbarComponentStory = {
         args: {
             ...defaultArgs,
-            label: 'haha',
-
         }   
 }

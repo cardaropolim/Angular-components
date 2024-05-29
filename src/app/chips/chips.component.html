@@ -1,4 +1,4 @@
-<mat-chip-listbox aria-label="State selection">
+<!-- <mat-chip-listbox aria-label="State selection">
     <mat-chip-option color="{{color}}">Created</mat-chip-option>
     <mat-chip-option color="{{color}}">Active</mat-chip-option>
     <mat-chip-option color="{{color}}" selected>Open</mat-chip-option>
@@ -9,4 +9,12 @@
     <mat-chip-option color="{{color}}">Expired</mat-chip-option>
     <mat-chip-option color="{{color}}">Overdue</mat-chip-option>
     <mat-chip-option color="{{color}}">Blocked</mat-chip-option>
-  </mat-chip-listbox>
+  </mat-chip-listbox> -->
+
+   <mat-chip-listbox aria-label="State selection">
+    <mat-chip-option *ngFor="let data of dataList" [color]="color" [value]="data.value">
+      {{ data.label }}
+    </mat-chip-option>
+  </mat-chip-listbox> 
+
+  

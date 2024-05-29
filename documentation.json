@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "PeriodicElement",
-            "id": "interface-PeriodicElement-5b23785665f92920aaa9418ed2f3bd350237da637924d1b9c927b1b9a0b61aa4fe6062eac3c5cfa7f81222b214c1368fc02c891719465ccf802a369ee1f70bc9",
+            "id": "interface-PeriodicElement-c7c4789277f9246f4c25816ce68089d959410f88f52e01de8920d1104c1612fe07d91bbd80e8a941f2f92defcf18ee5c9b004c89791b8c3dd9fa816f6193328f",
             "file": "src/app/checkbox-table/checkbox-table.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {SelectionModel} from '@angular/cdk/collections';\nimport {MatTableDataSource, MatTableModule} from '@angular/material/table';\nimport {MatCheckboxModule} from '@angular/material/checkbox';\n\nexport interface PeriodicElement {\n  name: string;\n  position: number;\n  Task_ID:  string;\n  Status: string;\n  Budget: number;\n  Location: string;\n  Created_on: string;\n}\n\nconst ELEMENT_DATA: PeriodicElement[] = [\n  {position: 1, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 2, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 3, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 4, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 5, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 6, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 7, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  ]\n\n@Component({\n  selector: 'app-checkbox-table',\n  standalone: true,\n  imports: [MatTableModule, MatCheckboxModule],\n  templateUrl: './checkbox-table.component.html',\n  styleUrl: './checkbox-table.component.scss'\n})\nexport class CheckboxTableComponent {\n  displayedColumns: string[] = ['select', 'Postion', 'Name', 'Task_ID', 'Status', 'Budget', 'Location', 'Created_on'];\n  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);\n  selection = new SelectionModel<PeriodicElement>(true, []);\n\n  isAllSelected() {\n    const numSelected = this.selection.selected.length;\n    const numRows = this.dataSource.data.length;\n    return numSelected === numRows;\n  }\n\n  toggleAllRows() {\n    if (this.isAllSelected()) {\n      this.selection.clear();\n      return;\n    }\n\n    this.selection.select(...this.dataSource.data);\n  }\n\n  checkboxLabel(row?: PeriodicElement): string {\n    if (!row) {\n      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;\n    }\n    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;\n  }\n}\n\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {SelectionModel} from '@angular/cdk/collections';\nimport {MatTableDataSource, MatTableModule} from '@angular/material/table';\nimport {MatCheckboxModule} from '@angular/material/checkbox';\n\nexport interface PeriodicElement {\n  name: string;\n  position: number;\n  Task_ID:  string;\n  Status: string;\n  Budget: number;\n  Location: string;\n  Created_on: string;\n}\n\nconst ELEMENT_DATA: PeriodicElement[] = [\n  {position: 1, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 2, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 3, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 4, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 5, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 6, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 7, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  ]\n\n@Component({\n  selector: 'app-checkbox-table',\n  standalone: true,\n  imports: [MatTableModule, MatCheckboxModule],\n  templateUrl: './checkbox-table.component.html',\n  styleUrl: './checkbox-table.component.scss'\n})\nexport class CheckboxTableComponent {\n  displayedColumns: string[] = ['select', 'Name', 'Task_ID', 'Status', 'Budget', 'Location', 'Created_on'];\n  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);\n  selection = new SelectionModel<PeriodicElement>(true, []);\n\n  isAllSelected() {\n    const numSelected = this.selection.selected.length;\n    const numRows = this.dataSource.data.length;\n    return numSelected === numRows;\n  }\n\n  toggleAllRows() {\n    if (this.isAllSelected()) {\n      this.selection.clear();\n      return;\n    }\n\n    this.selection.select(...this.dataSource.data);\n  }\n\n  checkboxLabel(row?: PeriodicElement): string {\n    if (!row) {\n      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;\n    }\n    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;\n  }\n}\n\n",
             "properties": [
                 {
                     "name": "Budget",
@@ -81,12 +81,12 @@
         },
         {
             "name": "PeriodicElement",
-            "id": "interface-PeriodicElement-0abc06a708515489c53587bd76a8732fcc641ff196d15191676e8803ddaddaf24aecda8685b2de9ea6df61154e91f76ee370c35848718bae49218a0776be3713-1",
+            "id": "interface-PeriodicElement-41718dc62a80095860b5ee59be8230bc0623851e7668c84c5c90a0a264734db8f020c15f8ef3d120432d28f6da4d96ca8611aa3ea6ac05c3627dae9e5755c1be-1",
             "file": "src/app/table/table.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, AfterViewInit, ViewChild, Input } from '@angular/core';\nimport { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';\nimport { MatTableDataSource, MatTableModule } from '@angular/material/table';\nimport {MatCheckboxModule} from '@angular/material/checkbox';\n\n@Component({\n  selector: 'app-table',\n  standalone: true,\n  imports: [\n    MatTableModule,\n    MatPaginatorModule,\n    MatCheckboxModule,\n  ],\n  templateUrl: './table.component.html',\n  styleUrl: './table.component.scss'\n})\nexport class TableComponent implements AfterViewInit {\n displayedColumns: string[] = ['Name', 'Task_ID', 'Status', 'Budget', 'Location', 'Created_on'];\n dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);\n\n @ViewChild(MatPaginator)\n  paginator!: MatPaginator;\n\n ngAfterViewInit() {\n   this.dataSource.paginator = this.paginator\n }\n}\n\nexport interface PeriodicElement {\n  name: string;\n  Task_ID:  string;\n  Status: string;\n  Budget: number;\n  Location: string;\n  Created_on: string;\n}\n\nconst ELEMENT_DATA: PeriodicElement[] = [\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n]\n\n\n\n\n// ./table.component.html'",
+            "sourceCode": "import { Component, AfterViewInit, ViewChild, Input } from '@angular/core';\nimport { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';\nimport { MatTableDataSource, MatTableModule } from '@angular/material/table';\nimport {MatCheckboxModule} from '@angular/material/checkbox';\n\n\n@Component({\n  selector: 'app-table',\n  standalone: true,\n  imports: [\n    MatTableModule,\n    MatPaginatorModule,\n    MatCheckboxModule,\n  ],\n  templateUrl: './table.component.html',\n  styleUrl: './table.component.scss'\n})\nexport class TableComponent implements AfterViewInit {\n displayedColumns: string[] = ['Name', 'Task_ID', 'Status', 'Budget', 'Location', 'Created_on'];\n dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);\n\n @ViewChild(MatPaginator)\n  paginator!: MatPaginator;\n\n ngAfterViewInit() {\n   this.dataSource.paginator = this.paginator\n }\n}\n\nexport interface PeriodicElement {\n  name: string;\n  Task_ID:  string;\n  Status: string;\n  Budget: number;\n  Location: string;\n  Created_on: string;\n}\n\nconst ELEMENT_DATA: PeriodicElement[] = [\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n]\n\n\n\n\n// ./table.component.html'",
             "properties": [
                 {
                     "name": "Budget",
@@ -95,7 +95,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 33
+                    "line": 34
                 },
                 {
                     "name": "Created_on",
@@ -104,7 +104,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 35
+                    "line": 36
                 },
                 {
                     "name": "Location",
@@ -113,7 +113,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 34
+                    "line": 35
                 },
                 {
                     "name": "name",
@@ -122,7 +122,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 30
+                    "line": 31
                 },
                 {
                     "name": "Status",
@@ -131,7 +131,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 32
+                    "line": 33
                 },
                 {
                     "name": "Task_ID",
@@ -140,7 +140,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 31
+                    "line": 32
                 }
             ],
             "indexSignatures": [],
@@ -150,39 +150,6 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "PeriodicElement-1"
-        },
-        {
-            "name": "statusList",
-            "id": "interface-statusList-26db524325ca58b57fc58dc86fc22a00168e4c55e983eaae3f7e9bc4b38db461d579e81fa12da231cc83e0ce6ef00145cc71fc8fef37ef6ebffc83731cbfcf81",
-            "file": "src/app/select/select.component.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import { Component, OnInit} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';\nimport {MatSelectModule} from '@angular/material/select';\nimport {MatFormFieldModule} from '@angular/material/form-field';\n\ninterface statusList {\n  value: string;\n  viewValue: string;\n}\n\n@Component({\n  selector: 'app-select',\n  templateUrl: './select.component.html',\n  styleUrl: './select.component.scss',\n  standalone: true,\n  imports: [\n    MatFormFieldModule,\n    MatSelectModule,\n    ReactiveFormsModule,\n    FormsModule,\n    CommonModule\n  ],\n})\n\nexport class SelectComponent {\n \n  statusList: statusList[] = [\n   {value: '1', viewValue: 'All' }, \n   {value: '2', viewValue: 'Open' },  \n   {value: '3', viewValue: 'Assigned' },   \n   {value: '4', viewValue: 'In review' },   \n   {value: '5', viewValue: 'Approved' },     \n   {value: '6', viewValue: 'Overdue' },     \n   {value: '7', viewValue: 'Expired' },      \n   {value: '8', viewValue: 'Extended' },      \n    ];\n\n    form: FormGroup = new FormGroup ({});\n\n    constructor(private  fb: FormBuilder) {\n\n       this.form = fb.group({\n         statusList: ['', [Validators.required]],\n       })\n    }\n\n     get f() {\n       return this.form.controls;\n     }\n     submit() {\n       console.log(this.form.value)\n     }\n\n\n\n}",
-            "properties": [
-                {
-                    "name": "value",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 8
-                },
-                {
-                    "name": "viewValue",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": []
         }
     ],
     "injectables": [],
@@ -525,7 +492,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-7a2c8a36cfbaee5b0fd99f2a688ec3aa668e3ca5c50884c921ceba3dfc999bec85c689c945fbc7341072591476433713266fc4d73dd7fd5758af0a5d605be293",
+            "id": "component-CardComponent-7417f9abc120cf0298a6a069101fadb15ff03f43027678d1c6545c960ff3788a255c0bb9a9df33b0a3b2b355e3e8c84def3dc2a1e18a629bb03ef1fdc227f50e",
             "file": "src/app/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -553,22 +520,25 @@
                 {
                     "name": "MatCardModule",
                     "type": "module"
+                },
+                {
+                    "name": "MatIcon"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {MatCardModule} from '@angular/material/card';\n\n@Component({\n  selector: 'app-card',\n  standalone: true,\n  imports: [\n    MatCardModule,\n  ],\n  templateUrl: './card.component.html',\n  styleUrl: './card.component.scss'\n})\nexport class CardComponent {\n\n}\n\n\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {MatCardModule} from '@angular/material/card';\nimport { MatIcon } from '@angular/material/icon';\n\n@Component({\n  selector: 'app-card',\n  standalone: true,\n  imports: [\n    MatCardModule,\n    MatIcon\n  ],\n  templateUrl: './card.component.html',\n  styleUrl: './card.component.scss'\n})\nexport class CardComponent {\n\n}\n\n\n",
             "styleUrl": "./card.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<mat-card class=\"card\" > \n\n  <mat-card-content >\n    Home</mat-card-content>\n  </mat-card>\n  "
+            "templateData": "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  \n\n\n<mat-card class=\"card\" > \n<mat-card-content >\n  <div class=\"content\">\n  <div class=\"avatar\"> <button> <div mat-card-avatar class=\"example-header-image\"></div></button></div>\n  <div class=\"notification\"><button><mat-icon>notification_important</mat-icon></button></div>\n<div class=\"text\">\n    Home\n  </div>\n  </div>\n</mat-card-content>\n  </mat-card>\n  "
         },
         {
             "name": "CheckboxTableComponent",
-            "id": "component-CheckboxTableComponent-5b23785665f92920aaa9418ed2f3bd350237da637924d1b9c927b1b9a0b61aa4fe6062eac3c5cfa7f81222b214c1368fc02c891719465ccf802a369ee1f70bc9",
+            "id": "component-CheckboxTableComponent-c7c4789277f9246f4c25816ce68089d959410f88f52e01de8920d1104c1612fe07d91bbd80e8a941f2f92defcf18ee5c9b004c89791b8c3dd9fa816f6193328f",
             "file": "src/app/checkbox-table/checkbox-table.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -598,7 +568,7 @@
                 },
                 {
                     "name": "displayedColumns",
-                    "defaultValue": "['select', 'Postion', 'Name', 'Task_ID', 'Status', 'Budget', 'Location', 'Created_on']",
+                    "defaultValue": "['select', 'Name', 'Task_ID', 'Status', 'Budget', 'Location', 'Created_on']",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string[]",
@@ -687,7 +657,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {SelectionModel} from '@angular/cdk/collections';\nimport {MatTableDataSource, MatTableModule} from '@angular/material/table';\nimport {MatCheckboxModule} from '@angular/material/checkbox';\n\nexport interface PeriodicElement {\n  name: string;\n  position: number;\n  Task_ID:  string;\n  Status: string;\n  Budget: number;\n  Location: string;\n  Created_on: string;\n}\n\nconst ELEMENT_DATA: PeriodicElement[] = [\n  {position: 1, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 2, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 3, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 4, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 5, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 6, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 7, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  ]\n\n@Component({\n  selector: 'app-checkbox-table',\n  standalone: true,\n  imports: [MatTableModule, MatCheckboxModule],\n  templateUrl: './checkbox-table.component.html',\n  styleUrl: './checkbox-table.component.scss'\n})\nexport class CheckboxTableComponent {\n  displayedColumns: string[] = ['select', 'Postion', 'Name', 'Task_ID', 'Status', 'Budget', 'Location', 'Created_on'];\n  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);\n  selection = new SelectionModel<PeriodicElement>(true, []);\n\n  isAllSelected() {\n    const numSelected = this.selection.selected.length;\n    const numRows = this.dataSource.data.length;\n    return numSelected === numRows;\n  }\n\n  toggleAllRows() {\n    if (this.isAllSelected()) {\n      this.selection.clear();\n      return;\n    }\n\n    this.selection.select(...this.dataSource.data);\n  }\n\n  checkboxLabel(row?: PeriodicElement): string {\n    if (!row) {\n      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;\n    }\n    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;\n  }\n}\n\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {SelectionModel} from '@angular/cdk/collections';\nimport {MatTableDataSource, MatTableModule} from '@angular/material/table';\nimport {MatCheckboxModule} from '@angular/material/checkbox';\n\nexport interface PeriodicElement {\n  name: string;\n  position: number;\n  Task_ID:  string;\n  Status: string;\n  Budget: number;\n  Location: string;\n  Created_on: string;\n}\n\nconst ELEMENT_DATA: PeriodicElement[] = [\n  {position: 1, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 2, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 3, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 4, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 5, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 6, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  {position: 7, name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n  ]\n\n@Component({\n  selector: 'app-checkbox-table',\n  standalone: true,\n  imports: [MatTableModule, MatCheckboxModule],\n  templateUrl: './checkbox-table.component.html',\n  styleUrl: './checkbox-table.component.scss'\n})\nexport class CheckboxTableComponent {\n  displayedColumns: string[] = ['select', 'Name', 'Task_ID', 'Status', 'Budget', 'Location', 'Created_on'];\n  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);\n  selection = new SelectionModel<PeriodicElement>(true, []);\n\n  isAllSelected() {\n    const numSelected = this.selection.selected.length;\n    const numRows = this.dataSource.data.length;\n    return numSelected === numRows;\n  }\n\n  toggleAllRows() {\n    if (this.isAllSelected()) {\n      this.selection.clear();\n      return;\n    }\n\n    this.selection.select(...this.dataSource.data);\n  }\n\n  checkboxLabel(row?: PeriodicElement): string {\n    if (!row) {\n      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;\n    }\n    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;\n  }\n}\n\n",
             "styleUrl": "./checkbox-table.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -765,6 +735,61 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<mat-chip-listbox aria-label=\"State selection\">\n    <mat-chip-option color=\"{{color}}\">Created</mat-chip-option>\n    <mat-chip-option color=\"{{color}}\">Active</mat-chip-option>\n    <mat-chip-option color=\"{{color}}\" selected>Open</mat-chip-option>\n    <mat-chip-option color=\"{{color}}\">Approved</mat-chip-option>\n    <mat-chip-option color=\"{{color}}\">Submitted</mat-chip-option>\n    <mat-chip-option color=\"{{color}}\">Completed</mat-chip-option>\n    <mat-chip-option color=\"{{color}}\">Updated</mat-chip-option>\n    <mat-chip-option color=\"{{color}}\">Expired</mat-chip-option>\n    <mat-chip-option color=\"{{color}}\">Overdue</mat-chip-option>\n    <mat-chip-option color=\"{{color}}\">Blocked</mat-chip-option>\n  </mat-chip-listbox>"
+        },
+        {
+            "name": "DatePickerComponent",
+            "id": "component-DatePickerComponent-009de83031d67640e6f217a4e793c585aeef622ab80592e1cf9a7a40c93fcb87c06ca75f92be2c4ef41354de5a40ff999f5b020570f715d3d7db639ea5330bfe",
+            "file": "src/app/date-picker/date-picker.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "provideNativeDateAdapter()"
+                }
+            ],
+            "selector": "cds-date-picker",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./date-picker.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatFormFieldModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatInputModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatDatepickerModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { provideNativeDateAdapter } from '@angular/material/core';\n\n\n@Component({\n  selector: 'cds-date-picker',\n  standalone: true,\n  providers: [provideNativeDateAdapter()],\n  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule],\n  templateUrl: './date-picker.component.html',\n  styleUrl: './date-picker.component.css',\n})\nexport class DatePickerComponent {}\n",
+            "styleUrl": "./date-picker.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-form-field> \n    <mat-label>placeholder</mat-label>\n    <input matInput [matDatepicker]=\"picker\">\n    <mat-hint>hint</mat-hint>\n    <mat-datepicker-toggle matIconSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <mat-datepicker #picker></mat-datepicker>\n  </mat-form-field> \n"
         },
         {
             "name": "DialogAnimationsExampleDialog",
@@ -1172,7 +1197,7 @@
         },
         {
             "name": "SelectComponent",
-            "id": "component-SelectComponent-26db524325ca58b57fc58dc86fc22a00168e4c55e983eaae3f7e9bc4b38db461d579e81fa12da231cc83e0ce6ef00145cc71fc8fef37ef6ebffc83731cbfcf81",
+            "id": "component-SelectComponent-450dec568a145c3874a82a405beef57852184d4b325f7cef6ad0515a86e00c0cb38d9e4266e66ac9d94fafc9469cfde61d73c6b561c06e950da4b64b9ed15509",
             "file": "src/app/select/select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1191,38 +1216,27 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "form",
-                    "defaultValue": "new FormGroup ({})",
+                    "name": "status",
+                    "defaultValue": "new FormControl('')",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "FormGroup",
+                    "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 39
+                    "line": 35
                 },
                 {
                     "name": "statusList",
-                    "defaultValue": "[\n   {value: '1', viewValue: 'All' }, \n   {value: '2', viewValue: 'Open' },  \n   {value: '3', viewValue: 'Assigned' },   \n   {value: '4', viewValue: 'In review' },   \n   {value: '5', viewValue: 'Approved' },     \n   {value: '6', viewValue: 'Overdue' },     \n   {value: '7', viewValue: 'Expired' },      \n   {value: '8', viewValue: 'Extended' },      \n    ]",
+                    "defaultValue": "[\n        'All',\n        'Open',\n        'Assigned',\n        'In review',\n        'Approved',\n        'Overdue',\n        'Expired',\n        'Extended'\n    ]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "statusList[]",
+                    "type": "string[]",
                     "optional": false,
                     "description": "",
-                    "line": 28
+                    "line": 36
                 }
             ],
-            "methodsClass": [
-                {
-                    "name": "submit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 51,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -1244,63 +1258,22 @@
                 {
                     "name": "FormsModule",
                     "type": "module"
-                },
-                {
-                    "name": "CommonModule",
-                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';\nimport {MatSelectModule} from '@angular/material/select';\nimport {MatFormFieldModule} from '@angular/material/form-field';\n\ninterface statusList {\n  value: string;\n  viewValue: string;\n}\n\n@Component({\n  selector: 'app-select',\n  templateUrl: './select.component.html',\n  styleUrl: './select.component.scss',\n  standalone: true,\n  imports: [\n    MatFormFieldModule,\n    MatSelectModule,\n    ReactiveFormsModule,\n    FormsModule,\n    CommonModule\n  ],\n})\n\nexport class SelectComponent {\n \n  statusList: statusList[] = [\n   {value: '1', viewValue: 'All' }, \n   {value: '2', viewValue: 'Open' },  \n   {value: '3', viewValue: 'Assigned' },   \n   {value: '4', viewValue: 'In review' },   \n   {value: '5', viewValue: 'Approved' },     \n   {value: '6', viewValue: 'Overdue' },     \n   {value: '7', viewValue: 'Expired' },      \n   {value: '8', viewValue: 'Extended' },      \n    ];\n\n    form: FormGroup = new FormGroup ({});\n\n    constructor(private  fb: FormBuilder) {\n\n       this.form = fb.group({\n         statusList: ['', [Validators.required]],\n       })\n    }\n\n     get f() {\n       return this.form.controls;\n     }\n     submit() {\n       console.log(this.form.value)\n     }\n\n\n\n}",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { animate, state, style, transition, trigger } from '@angular/animations';\n\n\n@Component({\n  selector: 'app-select',\n  templateUrl: './select.component.html',\n  styleUrl: './select.component.scss',\n  animations: [\n    trigger('transitionMessages', [\n      state('in', style({ opacity: 1 })),\n      state('out', style({ opacity: 0 })),\n      transition('void => *', [\n        animate('200ms ease-in')\n      ]),\n      transition('* => void', [\n        animate('200ms ease-out')\n      ])\n    ])\n  ],\n  standalone: true,\n  imports: [\n      MatFormFieldModule,\n      MatSelectModule,\n      ReactiveFormsModule,\n      FormsModule,\n  ],\n})\n\nexport class SelectComponent {\n \n   status = new FormControl('');\n   statusList: string[] = [\n        'All',\n        'Open',\n        'Assigned',\n        'In review',\n        'Approved',\n        'Overdue',\n        'Expired',\n        'Extended'\n    ];\n}",
             "styleUrl": "./select.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "fb",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 39,
-                "jsdoctags": [
-                    {
-                        "name": "fb",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
             "extends": [],
-            "accessors": {
-                "f": {
-                    "name": "f",
-                    "getSignature": {
-                        "name": "f",
-                        "type": "",
-                        "returnType": "",
-                        "line": 48
-                    }
-                }
-            },
-            "templateData": " <!-- <mat-form-field>\n    <mat-label>Status</mat-label>\n    <mat-select [formControl]=\"status\" multiple>\n      @for (status of statusList; track status) {\n        <mat-option [value]=\"status\">{{status}}</mat-option>\n      }\n    </mat-select>\n  </mat-form-field>  -->\n\n  <!-- <mat-form-field>\n    <mat-label>Status</mat-label>\n    <mat-select [formControl]=\"status\" multiple>\n      <mat-option *ngFor=\"let statusItem of statusList\" [value]=\"statusItem\">{{ statusItem }}</mat-option>\n    </mat-select>\n  </mat-form-field> -->\n\n\n  <!-- <mat-form-field>\n    <mat-label>Statut</mat-label>\n    <mat-select [formControl]=\"status\" multiple>\n      <mat-option *ngFor=\"let Status of statuslist; trackBy: trackByStatusFn\" [value]=\"status\">{{status}}</mat-option>\n    </mat-select>\n  </mat-form-field> -->\n\n  <form [formGroup]=\"form\" (ngSubmit)=\"submit()\">\n    <mat-form-field>\n      <mat-label>Select Status</mat-label>\n      <mat-select formControlName=\"S\" multiple>\n        <mat-option *ngFor=\"let statusList of statusList\" [value]=\"statusList.value\">\n          {{statusList.viewValue}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </form>"
+            "templateData": "  <mat-form-field>\n    <mat-label>Status</mat-label>\n    <mat-select [formControl]=\"status\" multiple>\n      @for (status of statusList; track status) {\n        <mat-option [value]=\"status\">{{status}}</mat-option>\n      }\n    </mat-select>\n  </mat-form-field>"
         },
         {
             "name": "TableComponent",
-            "id": "component-TableComponent-0abc06a708515489c53587bd76a8732fcc641ff196d15191676e8803ddaddaf24aecda8685b2de9ea6df61154e91f76ee370c35848718bae49218a0776be3713",
+            "id": "component-TableComponent-41718dc62a80095860b5ee59be8230bc0623851e7668c84c5c90a0a264734db8f020c15f8ef3d120432d28f6da4d96ca8611aa3ea6ac05c3627dae9e5755c1be",
             "file": "src/app/table/table.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1326,7 +1299,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 20
                 },
                 {
                     "name": "displayedColumns",
@@ -1336,7 +1309,7 @@
                     "type": "string[]",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 19
                 },
                 {
                     "name": "paginator",
@@ -1345,7 +1318,7 @@
                     "type": "MatPaginator",
                     "optional": false,
                     "description": "",
-                    "line": 22,
+                    "line": 23,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -1364,7 +1337,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1391,7 +1364,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, AfterViewInit, ViewChild, Input } from '@angular/core';\nimport { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';\nimport { MatTableDataSource, MatTableModule } from '@angular/material/table';\nimport {MatCheckboxModule} from '@angular/material/checkbox';\n\n@Component({\n  selector: 'app-table',\n  standalone: true,\n  imports: [\n    MatTableModule,\n    MatPaginatorModule,\n    MatCheckboxModule,\n  ],\n  templateUrl: './table.component.html',\n  styleUrl: './table.component.scss'\n})\nexport class TableComponent implements AfterViewInit {\n displayedColumns: string[] = ['Name', 'Task_ID', 'Status', 'Budget', 'Location', 'Created_on'];\n dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);\n\n @ViewChild(MatPaginator)\n  paginator!: MatPaginator;\n\n ngAfterViewInit() {\n   this.dataSource.paginator = this.paginator\n }\n}\n\nexport interface PeriodicElement {\n  name: string;\n  Task_ID:  string;\n  Status: string;\n  Budget: number;\n  Location: string;\n  Created_on: string;\n}\n\nconst ELEMENT_DATA: PeriodicElement[] = [\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n]\n\n\n\n\n// ./table.component.html'",
+            "sourceCode": "import { Component, AfterViewInit, ViewChild, Input } from '@angular/core';\nimport { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';\nimport { MatTableDataSource, MatTableModule } from '@angular/material/table';\nimport {MatCheckboxModule} from '@angular/material/checkbox';\n\n\n@Component({\n  selector: 'app-table',\n  standalone: true,\n  imports: [\n    MatTableModule,\n    MatPaginatorModule,\n    MatCheckboxModule,\n  ],\n  templateUrl: './table.component.html',\n  styleUrl: './table.component.scss'\n})\nexport class TableComponent implements AfterViewInit {\n displayedColumns: string[] = ['Name', 'Task_ID', 'Status', 'Budget', 'Location', 'Created_on'];\n dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);\n\n @ViewChild(MatPaginator)\n  paginator!: MatPaginator;\n\n ngAfterViewInit() {\n   this.dataSource.paginator = this.paginator\n }\n}\n\nexport interface PeriodicElement {\n  name: string;\n  Task_ID:  string;\n  Status: string;\n  Budget: number;\n  Location: string;\n  Created_on: string;\n}\n\nconst ELEMENT_DATA: PeriodicElement[] = [\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n]\n\n\n\n\n// ./table.component.html'",
             "styleUrl": "./table.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1463,19 +1436,19 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  \n\n\n<mat-toolbar class=\"toolbar\">\n  <mat-toolbar-row>\n    <span>Home</span>\n    <span class=\"example-spacer\"></span>\n    <button mat-icon-button class=\"example-icon favorite-icon\" aria-label=\"Example icon-button with heart icon\">\n      <mat-icon>favorite_border</mat-icon>\n    </button>\n    <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with Notification icon\">\n      <mat-icon>notifications_none</mat-icon>\n    </button>\n    <span></span>\n  </mat-toolbar-row>  \n\n     <mat-toolbar-row class=\"mtr\">\n       <div class=\"basic-container\">\n       <form class=\"example-form\"> \n        <mat-form-field class=\"example-full-width\" >\n          <button class=\"search\" mat-icon-button><mat-icon matIconPrefix>search</mat-icon></button>\n          <input type=\"search\" matInput>\n          <button class=\"clear\" mat-icon-button><mat-icon matIconSuffix>clear_all</mat-icon></button>\n        </mat-form-field>\n      </form>\n      \n    </div>\n    </mat-toolbar-row> \n  </mat-toolbar>\n\n\n"
+            "templateData": "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">  \n\n\n<mat-toolbar class=\"toolbar\">\n  <mat-toolbar-row>\n    <span>Home</span>\n    <span class=\"example-spacer\"></span>\n    <button mat-icon-button class=\"example-icon favorite-icon\" aria-label=\"Example icon-button with heart icon\">\n      <mat-icon>favorite_border</mat-icon>\n    </button>\n    <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with Notification icon\">\n      <mat-icon>notifications_none</mat-icon>\n    </button>\n  </mat-toolbar-row>  \n  \n  <mat-toolbar-row class=\"mtr\">\n    <div class=\"basic-container\">\n    <form class=\"example-form\"> \n     <span><mat-form-field class=\"example-full-width\" >\n       <button class=\"search\" mat-icon-button><mat-icon matIconPrefix>search</mat-icon></button>\n       <input type=\"search\" matInput>\n       <button class=\"clear\" mat-icon-button><mat-icon matIconSuffix>clear_all</mat-icon></button>\n     </mat-form-field></span>\n   </form>\n  </div>\n  </mat-toolbar-row> \n  </mat-toolbar>\n\n\n"
         }
     ],
     "modules": [
         {
             "name": "SelectModule",
-            "id": "module-SelectModule-9d1421ea488297261164934e36eb9324ab33ac24480291b60d49b97d6405487de016c5c8b618b20158537783f3483188804f9d5239f3edd65602fef6a5296908",
+            "id": "module-SelectModule-9a07c75671547e7624ade8701486cac997137220ffb1cd1209c1b517ac6139ee918ccec041356a3eaca2bf36ef13976c664d4fd4aff3647248673826a21fbf72",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/select/select.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\nimport { SelectComponent } from \"./select.component\";\nimport { FormControl, FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { MatSelectModule } from \"@angular/material/select\";\nimport { MatButtonModule } from \"@angular/material/button\";\n\n\n@NgModule({\n    declarations: [SelectComponent],\n    imports: [\n        CommonModule,\n        SelectComponent,\n        FormControl,\n        BrowserModule,\n        BrowserAnimationsModule,\n        FormsModule,\n        ReactiveFormsModule,\n        MatSelectModule,\n        MatButtonModule,\n        ]\n})\n\nexport class SelectModule {}",
+            "sourceCode": "import './polyfills';\nimport {HttpClientModule} from '@angular/common/http';\nimport {NgModule} from '@angular/core';\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\nimport {BrowserModule} from '@angular/platform-browser';\nimport {platformBrowserDynamic} from '@angular/platform-browser-dynamic';\nimport {BrowserAnimationsModule} from '@angular/platform-browser/animations';\nimport { SelectComponent } from './select.component';\n\n@NgModule({\n\n  imports: [\n    BrowserModule,\n    BrowserAnimationsModule,\n    FormsModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n  ],\n})\n\nexport class SelectModule {}\n\nplatformBrowserDynamic().bootstrapModule(SelectComponent);\n",
             "children": [
                 {
                     "type": "providers",
@@ -1483,22 +1456,11 @@
                 },
                 {
                     "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "SelectComponent"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "imports",
-                    "elements": [
-                        {
-                            "name": "FormControl"
-                        },
-                        {
-                            "name": "SelectComponent"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "exports",
@@ -1625,7 +1587,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "PeriodicElement[]",
-                "defaultValue": "[\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n]"
+                "defaultValue": "[\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n]"
             },
             {
                 "name": "Explore",
@@ -1716,6 +1678,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<ChipsComponent>",
                 "defaultValue": "{\n    component: ChipsComponent,\n}"
+            },
+            {
+                "name": "Meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/date-picker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<DatePickerComponent>",
+                "defaultValue": "{\n  component: DatePickerComponent,\n}"
             },
             {
                 "name": "Meta",
@@ -1861,6 +1833,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/date-picker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "DatePickerComponentStory",
+                "defaultValue": "{\n  args: {},\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/dialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1905,7 +1887,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ToolbarComponentStory",
-                "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'lol',\n        }\n      \n}"
+                "defaultValue": "{\n        args: {\n            ...defaultArgs,\n        }\n      \n}"
             },
             {
                 "name": "Profile_picture",
@@ -1975,7 +1957,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ToolbarComponentStory",
-                "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'haha',\n\n        }   \n}"
+                "defaultValue": "{\n        args: {\n            ...defaultArgs,\n        }   \n}"
             },
             {
                 "name": "Tertiary",
@@ -2050,6 +2032,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ChipsComponent>",
                 "file": "src/stories/chips.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "DatePickerComponentStory",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<DatePickerComponent>",
+                "file": "src/stories/date-picker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2443,7 +2436,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ToolbarComponentStory",
-                    "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'lol',\n        }\n      \n}"
+                    "defaultValue": "{\n        args: {\n            ...defaultArgs,\n        }\n      \n}"
                 },
                 {
                     "name": "Secondary",
@@ -2453,7 +2446,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ToolbarComponentStory",
-                    "defaultValue": "{\n        args: {\n            ...defaultArgs,\n            label: 'haha',\n\n        }   \n}"
+                    "defaultValue": "{\n        args: {\n            ...defaultArgs,\n        }   \n}"
                 }
             ],
             "src/app/checkbox-table/checkbox-table.component.ts": [
@@ -2477,7 +2470,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "PeriodicElement[]",
-                    "defaultValue": "[\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n]"
+                    "defaultValue": "[\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},\n]"
                 }
             ],
             "src/stories/badge.stories.ts": [
@@ -2522,6 +2515,28 @@
                     "deprecationMessage": "",
                     "type": "CheckboxTableComponentStory",
                     "defaultValue": "{\n    args: {\n  \n    },\n}"
+                }
+            ],
+            "src/stories/date-picker.stories.ts": [
+                {
+                    "name": "Meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/date-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<DatePickerComponent>",
+                    "defaultValue": "{\n  component: DatePickerComponent,\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/date-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DatePickerComponentStory",
+                    "defaultValue": "{\n  args: {},\n}"
                 }
             ],
             "src/stories/dialog.stories.ts": [
@@ -2697,6 +2712,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ChipsComponent>",
                     "file": "src/stories/chips.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/stories/date-picker.stories.ts": [
+                {
+                    "name": "DatePickerComponentStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DatePickerComponent>",
+                    "file": "src/stories/date-picker.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2882,6 +2910,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/date-picker/date-picker.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DatePickerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/dialog/dialog.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2931,15 +2968,6 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "SelectComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/select/select.component.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "statusList",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
@@ -3157,6 +3185,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Warn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/date-picker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/date-picker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

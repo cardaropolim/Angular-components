@@ -5,7 +5,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { SelectComponent } from './select.component';
+import { ChipsComponent } from './chips.component';
 
 @NgModule({
 
@@ -20,4 +20,4 @@ import { SelectComponent } from './select.component';
 
 export class SelectModule {}
 
-platformBrowserDynamic().bootstrapModule(SelectComponent);
+platformBrowserDynamic().bootstrapModule(ChipsComponent);

@@ -3,6 +3,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
+
 @Component({
   selector: 'app-table',
   standalone: true,
@@ -36,6 +37,9 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
+{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},
+{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},
+{name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},
 {name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},
 {name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},
 {name: 'Clean the street', Task_ID: 'DX8VD', Status: 'XX', Budget: 2, Location: 'Science Park', Created_on: '04/03/2024'},
